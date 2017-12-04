@@ -4,3 +4,5 @@
 
 /WebApiVoyage/.vs/WebApiVoyage/v14/.suo
 /WebApiVoyage/.vs/config/applicationhost.config
+
+/VoyageAngularWebsite/node_modules/*
