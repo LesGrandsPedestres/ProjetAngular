@@ -16,18 +16,26 @@ import {UserService} from "./user.service";
 import {UserComponent} from "./user.component";
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, HttpModule],
-  declarations: [ FormComponent,
-                  ActiviteComponent,
-                  JourComponent,
-                  TransportComponent,
-                  UserComponent,
-                  VoyageComponent ],
-  providers:    [ActiviteService,
-                 JourService,
-                 TransportService,
-                 UserService,
-                 VoyageService],
-  bootstrap:    [ FormComponent ]
+    imports:      [
+        BrowserModule,
+        FormsModule,
+        HttpModule
+    ],
+    declarations: [
+        FormComponent,
+        ActiviteComponent,
+        JourComponent,
+        TransportComponent,
+        UserComponent,
+        VoyageComponent
+    ],
+    providers:    [
+        ActiviteService,
+        JourService,
+        TransportService,
+        UserService,
+        VoyageService
+    ],
+    bootstrap:    [ FormComponent ]
 })
 export class AppModule { }
