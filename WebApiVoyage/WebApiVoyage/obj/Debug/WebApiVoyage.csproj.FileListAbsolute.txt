@@ -1,4 +1,3 @@
-C:\Users\1543677\Desktop\ProjetAngular\WebApiVoyage\WebApiVoyage\obj\Debug\WebApiVoyage.csprojResolveAssemblyReference.cache
 C:\Users\1543677\Desktop\ProjetAngular\WebApiVoyage\WebApiVoyage\bin\ApplicationInsights.config
 C:\Users\1543677\Desktop\ProjetAngular\WebApiVoyage\WebApiVoyage\bin\roslyn\csc.exe
 C:\Users\1543677\Desktop\ProjetAngular\WebApiVoyage\WebApiVoyage\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll

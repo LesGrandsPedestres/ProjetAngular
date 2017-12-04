@@ -242,6 +242,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ActivitesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -250,7 +251,11 @@
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Activite.cs" />
+<<<<<<< HEAD
+    <Compile Include="Models\DbInitializer.cs" />
+=======
     <Compile Include="Models\Destination.cs" />
+>>>>>>> a790bc229f3300cde0ffbd502770bbcdaf32683b
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Jour.cs" />
     <Compile Include="Models\Transport.cs" />
