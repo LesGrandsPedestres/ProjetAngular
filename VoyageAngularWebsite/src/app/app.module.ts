@@ -15,6 +15,7 @@ import { UserService } from "./user.service";
 import { UserComponent } from "./user.component";
 import { RouterModule } from "@angular/router";
 import {BrowserModule} from "@angular/platform-browser";
+import {LogoutComponent} from "./logout.component";
 
 @NgModule({
     imports:      [
@@ -24,7 +25,8 @@ import {BrowserModule} from "@angular/platform-browser";
         RouterModule.forRoot([
             { path: '', redirectTo: '/home', pathMatch: 'full' },
             { path: 'home', component: VoyageComponent },
-            { path: 'account', component: UserComponent }
+            { path: 'account', component: UserComponent },
+            { path: 'logout', component: LogoutComponent }
         ])
     ],
     declarations: [
@@ -33,7 +35,8 @@ import {BrowserModule} from "@angular/platform-browser";
         JourComponent,
         TransportComponent,
         UserComponent,
-        VoyageComponent
+        VoyageComponent,
+        LogoutComponent
     ],
     providers:    [
         ActiviteService,
