@@ -114,3 +114,6 @@ C:\Users\1543677\Desktop\ProjetAngular\WebApiVoyage\WebApiVoyage\bin\fr\Microsof
 C:\Users\1543677\Desktop\ProjetAngular\WebApiVoyage\WebApiVoyage\bin\fr\System.Web.Http.Owin.resources.dll
 C:\Users\1543677\Desktop\ProjetAngular\WebApiVoyage\WebApiVoyage\obj\Debug\WebApiVoyage.dll
 C:\Users\1543677\Desktop\ProjetAngular\WebApiVoyage\WebApiVoyage\obj\Debug\WebApiVoyage.pdb
+C:\Users\1458214\Desktop\ProjetAngular\WebApiVoyage\WebApiVoyage\obj\Debug\WebApiVoyage.csprojResolveAssemblyReference.cache
+C:\Users\1458214\Desktop\ProjetAngular\WebApiVoyage\WebApiVoyage\obj\Debug\WebApiVoyage.dll
+C:\Users\1458214\Desktop\ProjetAngular\WebApiVoyage\WebApiVoyage\obj\Debug\WebApiVoyage.pdb

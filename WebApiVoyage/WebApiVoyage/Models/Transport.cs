@@ -15,6 +15,8 @@ namespace WebApiVoyage.Models
 
         public ModeTransport TypeTransport { get; set; }
 
+        public Destination Destination { get; set; }
+
         public DateTime DateDepart { get; set; }
 
         public DateTime DateArrive { get; set; }
@@ -26,6 +28,5 @@ namespace WebApiVoyage.Models
         [InverseProperty("ListeVoyageur")]
         public Voyage Voyage { get; set; }
 
-       
     }
 }
