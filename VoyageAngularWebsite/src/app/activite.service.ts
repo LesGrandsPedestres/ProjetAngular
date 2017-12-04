@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {Http} from "@angular/http";
 
-@Injectable
+@Injectable()
 export class ActiviteService{
     constructor(private http: Http) {}
 }
