@@ -3,10 +3,29 @@
         <h2 style="text-align:center;margin-bottom:0px;">Destinations</h2>
     </div>
     <div class="col-md-12" *ngFor="let transport of transportService.transports">
-        <h3>{{getModeTransport(transport.TypeTransport)}}</h3>
-<!--        <agm-map [latitude]="transport.Destination.LatitudeDepart" [longitude]="transport.Destination.LongitudeDepart" [zoom]="1">
+        <div class="col-md-12"><h3>Transport : {{getModeTransport(transport.TypeTransport)}}</h3></div>
+        <div class="col-md-6"><h4>Départ : {{transport.DateDepart}}</h4></div>
+        <div class="col-md-6"><h4>Arrivée : {{transport.DateDepart}}</h4></div>
+
+<!--
+        <agm-map [latitude]="transport.Destination.LatitudeDepart" [longitude]="transport.Destination.LongitudeDepart" [zoom]="7">
             <agm-marker [latitude]="transport.Destination.LatitudeDepart" [longitude]="transport.Destination.LongitudeDepart"></agm-marker>
             <agm-marker [latitude]="transport.Destination.LatitudeArrivee" [longitude]="transport.Destination.LongitudeArrivee"></agm-marker>
-        </agm-map>-->
+        </agm-map>
+-->
+
+        <div class="tp-caption lfb fadeout"
+             data-x="center"
+             data-y="center"
+             data-hoffset="0"
+             data-voffset="150"
+             data-speed="1000"
+             data-start="1400"
+             data-easing="Power4.easeOut"
+             style="width:90%">
+            <spi-map [emplacement]="emplacement" [zoom]="15">
+                <spi-direction [mode]="'DRIVING'" [origin]="'Masson Montréal'" [destination]="'Cégep Montpetit'" [waypoints]="waypoints"></spi-direction>
+            </spi-map>
+        </div>
     </div>
 </div>

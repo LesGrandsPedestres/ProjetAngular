@@ -1,6 +1,7 @@
-import { NgModule }      from '@angular/core';
+import { NgModule }    from '@angular/core';
 import { FormsModule }   from '@angular/forms';
 
+import {SpiComponent}  from './spi.component';
 import { FormComponent }  from './form.component';
 import { VoyageComponent } from "./voyage.component";
 import { ActiviteComponent } from "./activite.component";
@@ -16,12 +17,16 @@ import { UserComponent } from "./user.component";
 import { RouterModule } from "@angular/router";
 import {BrowserModule} from "@angular/platform-browser";
 import {LogoutComponent} from "./logout.component";
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
     imports:      [
         BrowserModule,
         FormsModule,
         HttpModule,
+        AgmCoreModule.forRoot({
+            apiKey: 'AIzaSyB2EuOW-iYY7uNt5uA0RMKG57UJUIc4rRs'
+        }),
         RouterModule.forRoot([
             { path: '', redirectTo: '/home', pathMatch: 'full' },
             { path: 'home', component: VoyageComponent },
@@ -36,7 +41,8 @@ import {LogoutComponent} from "./logout.component";
         TransportComponent,
         UserComponent,
         VoyageComponent,
-        LogoutComponent
+        LogoutComponent,
+        SpiComponent
     ],
     providers:    [
         ActiviteService,
@@ -45,6 +51,6 @@ import {LogoutComponent} from "./logout.component";
         UserService,
         VoyageService
     ],
-    bootstrap:    [ FormComponent ]
+    bootstrap:    [ TransportComponent ]
 })
 export class AppModule { }

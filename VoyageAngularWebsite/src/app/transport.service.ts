@@ -1,9 +1,9 @@
-import {Injectable, OnInit} from "@angular/core";
+import {Injectable} from "@angular/core";
 import {Http} from "@angular/http";
 import {Transport, ModeTransport} from "./model/transport";
 
 @Injectable()
-export class TransportService implements OnInit{
+export class TransportService{
 
     public transports: Transport[];
 
@@ -21,7 +21,7 @@ export class TransportService implements OnInit{
                 LatitudeArrivee: 45.00000,
             },
             DateDepart: new Date(),
-            DateArrive: new Date(),
+            DateArrivee: new Date(),
             Cout: 10.00,
             VoyageId: 1
         });
@@ -36,7 +36,7 @@ export class TransportService implements OnInit{
                 LatitudeArrivee: 5.53000,
             },
             DateDepart: new Date(),
-            DateArrive: new Date(),
+            DateArrivee: new Date(),
             Cout: 20.00,
             VoyageId: 1
         });

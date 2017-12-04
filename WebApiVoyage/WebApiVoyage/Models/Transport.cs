@@ -19,7 +19,7 @@ namespace WebApiVoyage.Models
 
         public DateTime DateDepart { get; set; }
 
-        public DateTime DateArrive { get; set; }
+        public DateTime DateArrivee { get; set; }
 
         public double Cout { get; set; }
         [ForeignKey("Voyage")]
