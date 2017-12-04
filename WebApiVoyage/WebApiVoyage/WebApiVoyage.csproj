@@ -245,20 +245,12 @@
     <Compile Include="Controllers\ActivitesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
-    <Compile Include="Controllers\VoyagesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Activite.cs" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-     HEAD
-=======
->>>>>>> b4d8db9666719abde8d09729f43eb22970d6dd24
-=======
->>>>>>> b4d8db9666719abde8d09729f43eb22970d6dd24
     <Compile Include="Models\DbInitializer.cs" />
     <Compile Include="Models\Destination.cs" />
     <Compile Include="Models\IdentityModels.cs" />
