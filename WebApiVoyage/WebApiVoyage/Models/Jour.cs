@@ -17,6 +17,6 @@ namespace WebApiVoyage.Models
         public double BudgetJour { get; set; }
 
         [InverseProperty("JourneeActivite")]
-        public IEnumerable<Activite> ListeActivite { get; set; }
+        public virtual List<Activite> ListeActivite { get; set; }
     }
 }
