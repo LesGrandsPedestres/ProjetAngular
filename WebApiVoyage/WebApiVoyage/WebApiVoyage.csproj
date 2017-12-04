@@ -253,7 +253,10 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Activite.cs" />
 <<<<<<< HEAD
+<<<<<<< HEAD
      HEAD
+=======
+>>>>>>> b4d8db9666719abde8d09729f43eb22970d6dd24
 =======
 >>>>>>> b4d8db9666719abde8d09729f43eb22970d6dd24
     <Compile Include="Models\DbInitializer.cs" />
