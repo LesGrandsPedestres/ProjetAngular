@@ -13,7 +13,7 @@ describe('FormComponent', function () {
     TestBed.configureTestingModule({
       declarations: [ FormComponent ]
     })
-    .compileComponents();
+        .compileComponents();
   }));
 
   beforeEach(() => {
@@ -28,6 +28,6 @@ describe('FormComponent', function () {
     fixture.detectChanges();
     const h1 = de.nativeElement;
     expect(h1.innerText).toMatch(/angular/i,
-      '<h1> should say something about "Angular"');
+        '<h1> should say something about "Angular"');
   });
 });
