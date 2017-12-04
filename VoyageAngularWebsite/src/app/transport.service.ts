@@ -9,12 +9,8 @@ export class TransportService implements OnInit{
 
     constructor(private http: Http) {}
 
-    ngOnInit() : void{
-        this.getAllVoyageTransports();
-    }
-
     getAllVoyageTransports(){
-
+        this.transports = [];
         this.transports.push({
             TransportId: 1,
             TypeTransport: ModeTransport.Automobile,
@@ -45,5 +41,6 @@ export class TransportService implements OnInit{
             VoyageId: 1
         });
 
+        console.log(this.transports);
     }
 }

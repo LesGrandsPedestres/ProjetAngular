@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TransportService} from "./transport.service";
+import {ModeTransport} from "./model/transport";
 
 @Component({
   selector: 'transport',
@@ -14,10 +15,15 @@ import {TransportService} from "./transport.service";
     }
   `]
 })
-export class TransportComponent {
-  mtlLat: number = 45.535493;
-  mtlLng: number = -73.493892;
+export class TransportComponent implements OnInit{
 
   constructor(private transportService: TransportService) { }
 
+  ngOnInit() : void{
+    this.transportService.getAllVoyageTransports();
+  }
+
+  getModeTransport(index: number) : string{
+    return ModeTransport[index];
+  }
 }

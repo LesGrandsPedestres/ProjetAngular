@@ -1,4 +1,4 @@
-import {Destination} from "./Destination";
+import {Destination} from "./destination";
 
 export class Transport{
     TransportId: number;

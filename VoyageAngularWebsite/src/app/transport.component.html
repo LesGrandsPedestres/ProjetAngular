@@ -3,6 +3,10 @@
         <h2 style="text-align:center;margin-bottom:0px;">Destinations</h2>
     </div>
     <div class="col-md-12" *ngFor="let transport of transportService.transports">
-        <h3>{{transport.TypeTransport}}</h3>
+        <h3>{{getModeTransport(transport.TypeTransport)}}</h3>
+<!--        <agm-map [latitude]="transport.Destination.LatitudeDepart" [longitude]="transport.Destination.LongitudeDepart" [zoom]="1">
+            <agm-marker [latitude]="transport.Destination.LatitudeDepart" [longitude]="transport.Destination.LongitudeDepart"></agm-marker>
+            <agm-marker [latitude]="transport.Destination.LatitudeArrivee" [longitude]="transport.Destination.LongitudeArrivee"></agm-marker>
+        </agm-map>-->
     </div>
 </div>
