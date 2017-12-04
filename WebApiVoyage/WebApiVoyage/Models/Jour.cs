@@ -10,18 +10,18 @@ namespace WebApiVoyage.Models
     public class Jour
     {
         [Key]
-        public int idJour { get; set; }
+        public int JourId { get; set; }
 
-        public int numeroJour { get; set; }
+        public int NumeroJour { get; set; }
 
-        public double budgetJour { get; set; }
+        public double BudgetJour { get; set; }
 
-        [InverseProperty("journeeActivite")]
-        public IEnumerable<Activite> listeActivite { get; set; }
+        [InverseProperty("JourneeActivite")]
+        public IEnumerable<Activite> ListeActivite { get; set; }
 
-        [ForeignKey("reservationHotel")]
-        public int idReservationHotel { get; set; }
-        [InverseProperty("joursReservation")]
-        public Hotel reservationHotel { get; set; }
+        [ForeignKey("ReservationHotel")]
+        public int ReservationHotelId { get; set; }
+        [InverseProperty("JoursReservation")]
+        public Hotel ReservationHotel { get; set; }
     }
 }

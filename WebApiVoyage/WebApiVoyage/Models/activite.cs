@@ -10,20 +10,20 @@ namespace WebApiVoyage.Models
     public class Activite
     { 
         [Key]
-        public int idActivite { get; set; }
+        public int ActiviteId { get; set; }
         [Required]
-        public string titreActivite { get; set; }
+        public string TitreActivite { get; set; }
         [Required]
-        public DateTime date { get; set; }
+        public DateTime Date { get; set; }
         [Required]
-        public string localisation { get; set; }
+        public string Localisation { get; set; }
 
-        public double cout { get; set; }
+        public double Cout { get; set; }
 
-        [ForeignKey("journeeActivite")]
-        public int idJour { get; set; }
-        [InverseProperty("listeActivite")]
-        public Jour journeeActivite { get; set; }
+        [ForeignKey("JourneeActivite")]
+        public int JourId { get; set; }
+        [InverseProperty("ListeActivite")]
+        public Jour JourneeActivite { get; set; }
 
 
     }

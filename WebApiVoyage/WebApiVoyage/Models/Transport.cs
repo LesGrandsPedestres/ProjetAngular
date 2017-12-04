@@ -11,20 +11,20 @@ namespace WebApiVoyage.Models
     public class Transport
     {
         [Key]
-        public int idTransport { get; set; }
+        public int TransportId { get; set; }
 
-        public ModeTransport typeTransport { get; set; }
+        public ModeTransport TypeTransport { get; set; }
 
-        public DateTime dateDepart { get; set; }
+        public DateTime DateDepart { get; set; }
 
-        public DateTime dateArrive { get; set; }
+        public DateTime DateArrive { get; set; }
 
-        public double cout { get; set; }
-        [ForeignKey("voyage")]
-        public int idVoyage { get; set;}
+        public double Cout { get; set; }
+        [ForeignKey("Voyage")]
+        public int VoyageId { get; set;}
 
-        [InverseProperty("listeVoyageur")]
-        public Voyage voyage { get; set; }
+        [InverseProperty("ListeVoyageur")]
+        public Voyage Voyage { get; set; }
 
        
     }

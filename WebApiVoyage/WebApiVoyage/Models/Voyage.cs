@@ -10,22 +10,22 @@ namespace WebApiVoyage.Models
     public class Voyage
     {
         [Key]
-        public int idVoyage { get; set; }
+        public int VoyageId { get; set; }
         [Required]
-        public string titreVoyage { get; set; }
+        public string TitreVoyage { get; set; }
 
-        public int nbJours { get; set; }
+        public int NbJours { get; set; }
         [Required]
-        public DateTime dateDepart { get; set; }
+        public DateTime DateDepart { get; set; }
         [Required]
-        public DateTime dateRetour { get; set; }
+        public DateTime DateRetour { get; set; }
         [Required]
-        public double budget { get; set; }
+        public double Budget { get; set; }
 
-        public double budgetRestant { get; set; }
+        public double BudgetRestant { get; set; }
 
-        [InverseProperty("voyage")]
-        public IEnumerable<ApplicationUser> listeVoyageur { get; set;}
+        [InverseProperty("Voyage")]
+        public IEnumerable<ApplicationUser> ListeVoyageur { get; set;}
         
 
     }

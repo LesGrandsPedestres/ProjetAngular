@@ -11,16 +11,16 @@ namespace WebApiVoyage.Models
     {
 
         [Key]
-        public int idReservationHotel { get; set; }
+        public int ReservationHotelId { get; set; }
 
-        public string nomHotel { get; set; }
+        public string NomHotel { get; set; }
 
-        public int numeroChambre { get; set; }
+        public int NumeroChambre { get; set; }
 
-        public double cout { get; set; }
+        public double Cout { get; set; }
 
-        [InverseProperty("reservationHotel")]
-        public IEnumerable<Jour> joursReservation { get; set; }
+        [InverseProperty("ReservationHotel")]
+        public IEnumerable<Jour> JoursReservation { get; set; }
 
     }
 }
