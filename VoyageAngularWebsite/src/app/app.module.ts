@@ -23,7 +23,8 @@ import {BrowserModule} from "@angular/platform-browser";
         HttpModule,
         RouterModule.forRoot([
             { path: '', redirectTo: '/home', pathMatch: 'full' },
-            { path: 'home', component: VoyageComponent }
+            { path: 'home', component: VoyageComponent },
+            { path: 'account', component: UserComponent }
         ])
     ],
     declarations: [

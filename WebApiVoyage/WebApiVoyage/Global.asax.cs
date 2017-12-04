@@ -21,7 +21,7 @@ namespace WebApiVoyage
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            Database.SetInitializer<ApplicationDbContext>(new DbInitializer());
+            Database.SetInitializer(new DbInitializer());
         }
     }
 }
