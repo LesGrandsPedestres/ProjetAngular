@@ -1,6 +1,8 @@
 import {Injectable} from "@angular/core";
 import {Http, RequestOptions, Headers, URLSearchParams} from "@angular/http";
 
+import "rxjs/add/operator/toPromise";
+
 @Injectable()
 export class UserService{
 
