@@ -29,12 +29,8 @@ namespace WebApiVoyage.Models
             return new ApplicationDbContext();
         }
 
-<<<<<<< HEAD
-        public System.Data.Entity.DbSet<WebApiVoyage.Models.Activite> Activites { get; set; }
-
-        public System.Data.Entity.DbSet<WebApiVoyage.Models.Jour> Jours { get; set; }
-=======
+        public System.Data.Entity.DbSet<Activite> Activites { get; set; }
+        public System.Data.Entity.DbSet<Jour> Jours { get; set; }
         public System.Data.Entity.DbSet<Voyage> Voyages { get; set; }
->>>>>>> a790bc229f3300cde0ffbd502770bbcdaf32683b
     }
 }

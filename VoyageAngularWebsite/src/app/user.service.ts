@@ -4,8 +4,8 @@ import {Http, RequestOptions, Headers, URLSearchParams} from "@angular/http";
 @Injectable()
 export class UserService{
 
-    private baseUrl: string = "http://localhost:59318/";
-    
+    private baseUrl: string = "http://localhost:1769/";
+
     constructor(private http: Http) {}
 
     public login(username: string, password: string): Promise<boolean> {
