@@ -18,10 +18,5 @@ namespace WebApiVoyage.Models
 
         [InverseProperty("JourneeActivite")]
         public IEnumerable<Activite> ListeActivite { get; set; }
-
-        [ForeignKey("ReservationHotel")]
-        public int ReservationHotelId { get; set; }
-        [InverseProperty("JoursReservation")]
-        public Hotel ReservationHotel { get; set; }
     }
 }
