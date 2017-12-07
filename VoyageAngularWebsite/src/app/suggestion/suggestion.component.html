@@ -1,0 +1,27 @@
+  <section id="suggestion">
+    <div class="container">
+      <div class="section-heading inverse sp-effect3">
+        <h1>Suggestion</h1>
+        <div class="divider"></div>
+        <p>Google Places API, les suggestion comme on trouve dans Google Maps</p>
+      </div>
+      <div class="row">
+        <div class="col-md-12 col-md-push-1 sp-effect3">
+          <div class="col-md-6">
+            <ul class="list-group">
+              <li class="list-group-item" *ngFor="let place of places">
+                <div class="review-comment">
+                  <h3><img src="{{place.icon}}" alt=""> {{place.name}}</h3>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <spi-map [emplacement]="emplacement" [zoom]="15">
+              <spi-marker *ngFor="let place of places" [emplacement]="place.geometry.location" [icon]="place.icon" [infoWindow]="getInfoWindowTxt(place)"></spi-marker>
+            </spi-map>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

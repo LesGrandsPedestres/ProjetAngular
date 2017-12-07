@@ -1,0 +1,193 @@
+<header>
+
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="fa fa-bars fa-lg"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          <div class="tp-caption medium_white_light sft" data-x="center" data-y="250" data-hoffset="0" data-voffset="0" data-speed="1000" data-start="1400" data-easing="Power4.easeOut">
+            Super Projet Infini
+          </div>
+        </a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#itineraire">Itinéraire</a>
+          </li>
+          <li><a href="#geocode">Géocode</a>
+          </li>
+          <li><a href="#localisation">Localiser</a>
+          </li>
+          <li><a href="#suggestion">Suggestion</a>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-->
+  </nav>
+
+  <!--RevSlider-->
+  <section id="itineraire">
+    <div class="tp-banner-container">
+      <div class="tp-banner" id="itineraire-slider">
+        <ul>
+          <!-- SLIDE  -->
+          <li data-transition="fade" data-slotamount="7" data-masterspeed="1500" >
+            <!-- MAIN IMAGE -->
+            <img src="img/transparent.png"  alt="slidebg1"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+            <!-- LAYERS -->
+            <div class="tp-caption large_white_light sft"
+                 data-x="center"
+                 data-y="center"
+                 data-hoffset="0"
+                 data-voffset="-150"
+                 data-speed="1000"
+                 data-start="700"
+                 data-easing="Power4.easeOut">
+              Itinéraire <i class="fa fa-car"></i>
+              <div class="divider"></div>
+            </div>
+            <div class="tp-caption lfb fadeout"
+                 data-x="center"
+                 data-y="center"
+                 data-hoffset="0"
+                 data-voffset="150"
+                 data-speed="1000"
+                 data-start="1400"
+                 data-easing="Power4.easeOut"
+                 style="width:90%">
+              <spi-map [emplacement]="emplacement" [zoom]="15">
+                <spi-direction [mode]="'DRIVING'" [origin]="'Masson Montréal'" [destination]="'Cégep Montpetit'"></spi-direction>
+              </spi-map>
+            </div>
+          </li>
+          <li data-transition="zoomout" data-slotamount="7" data-masterspeed="1000" >
+            <!-- MAIN IMAGE -->
+            <img src="img/transparent.png"  alt="slidebg1"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+            <!-- LAYERS -->
+            <div class="tp-caption large_white_light sft"
+                 data-x="center"
+                 data-y="center"
+                 data-hoffset="0"
+                 data-voffset="-150"
+                 data-speed="1000"
+                 data-start="700"
+                 data-easing="Power4.easeOut">
+              Itinéraire <i class="fa fa-bus"></i>
+              <div class="divider"></div>
+            </div>
+            <div class="tp-caption lfb fadeout"
+                 data-x="center"
+                 data-y="center"
+                 data-hoffset="0"
+                 data-voffset="150"
+                 data-speed="1000"
+                 data-start="1400"
+                 data-easing="Power4.easeOut"
+                 style="width:90%">
+              <spi-map [emplacement]="emplacement" [zoom]="15">
+                <spi-direction [mode]="'TRANSIT'" [origin]="'Station metron longueuil'" [destination]="'Cégep Montpetit'"></spi-direction>
+              </spi-map>
+            </div>
+          </li>
+          <li data-transition="zoomout" data-slotamount="7" data-masterspeed="1000" >
+            <!-- MAIN IMAGE -->
+            <img src="img/transparent.png"  alt="slidebg1"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+            <!-- LAYERS -->
+            <div class="tp-caption large_white_light sft"
+                 data-x="center"
+                 data-y="center"
+                 data-hoffset="0"
+                 data-voffset="-150"
+                 data-speed="1000"
+                 data-start="700"
+                 data-easing="Power4.easeOut">
+              Itinéraire <i class="fa fa-bicycle"></i>
+              <div class="divider"></div>
+            </div>
+            <div class="tp-caption lfb fadeout"
+                 data-x="center"
+                 data-y="center"
+                 data-hoffset="0"
+                 data-voffset="150"
+                 data-speed="1000"
+                 data-start="1400"
+                 data-easing="Power4.easeOut"
+                 style="width:90%">
+              <spi-map [emplacement]="emplacement" [zoom]="15">
+                <spi-direction [mode]="'BICYCLING'" [origin]="'Masson Montréal'" [destination]="'Cégep Montpetit'"></spi-direction>
+              </spi-map>
+            </div>
+          </li>
+          <li data-transition="zoomout" data-slotamount="7" data-masterspeed="1000" >
+            <!-- MAIN IMAGE -->
+            <img src="img/transparent.png"  alt="slidebg1"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+            <!-- LAYERS -->
+            <div class="tp-caption large_white_light sft"
+                 data-x="center"
+                 data-y="center"
+                 data-hoffset="0"
+                 data-voffset="-150"
+                 data-speed="1000"
+                 data-start="700"
+                 data-easing="Power4.easeOut">
+              Itinéraire <i class="fa fa-wheelchair"></i>
+              <div class="divider"></div>
+            </div>
+            <div class="tp-caption lfb fadeout"
+                 data-x="center"
+                 data-y="center"
+                 data-hoffset="0"
+                 data-voffset="150"
+                 data-speed="1000"
+                 data-start="1400"
+                 data-easing="Power4.easeOut"
+                 style="width:90%">
+              <spi-map [emplacement]="emplacement" [zoom]="15">
+                <spi-direction [mode]="'WALKING'" [origin]="'Masson Montréal'" [destination]="'Cégep Montpetit'"></spi-direction>
+              </spi-map>
+            </div>
+          </li>
+          <li data-transition="zoomout" data-slotamount="7" data-masterspeed="1000" >
+            <!-- MAIN IMAGE -->
+            <img src="img/transparent.png"  alt="slidebg1"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+            <!-- LAYERS -->
+            <div class="tp-caption large_white_light sft"
+                 data-x="center"
+                 data-y="center"
+                 data-hoffset="0"
+                 data-voffset="-150"
+                 data-speed="1000"
+                 data-start="700"
+                 data-easing="Power4.easeOut">
+              Itinéraire Waypoints <i class="fa fa-map-marker"></i>
+              <div class="divider"></div>
+            </div>
+            <div class="tp-caption lfb fadeout"
+                 data-x="center"
+                 data-y="center"
+                 data-hoffset="0"
+                 data-voffset="150"
+                 data-speed="1000"
+                 data-start="1400"
+                 data-easing="Power4.easeOut"
+                 style="width:90%">
+              <spi-map [emplacement]="emplacement" [zoom]="15">
+                <spi-direction [mode]="'DRIVING'" [origin]="'Masson Montréal'" [destination]="'Cégep Montpetit'" [waypoints]="waypoints"></spi-direction>
+              </spi-map>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+</header>

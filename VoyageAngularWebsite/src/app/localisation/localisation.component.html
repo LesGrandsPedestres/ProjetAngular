@@ -1,0 +1,49 @@
+<section id="localisation">
+  <div class="container">
+    <div class="section-heading sp-effect3">
+      <h1>Localiser</h1>
+      <div class="divider"></div>
+      <p>Localiser l'utilisateur de votre application</p>
+    </div>
+    <div class="row" *ngIf="emplacement">
+      <div class="col-md-4 col-sm-4 sp-effect1">
+        <div class="media media-left feature">
+          <a class="pull-right" href="#">
+            <i class="fa fa-home fa-2x"></i>
+          </a>
+          <div class="media-body">
+            <h3 class="media-heading">Adresse</h3>
+            {{emplacement.adresse}}
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-4">
+        <div>
+          <spi-map [emplacement]="emplacement" [zoom]="15">
+            <spi-marker [emplacement]="emplacement"></spi-marker>
+          </spi-map>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-4 sp-effect2">
+        <div class="media feature">
+          <a class="pull-left" href="#">
+            <i class="fa fa-map-marker fa-2x"></i>
+          </a>
+          <div class="media-body">
+            <h3 class="media-heading">Latitude</h3>
+            {{emplacement.lat}}
+          </div>
+        </div>
+        <div class="media feature">
+          <a class="pull-left" href="#">
+            <i class="fa fa-map-marker fa-2x"></i>
+          </a>
+          <div class="media-body">
+            <h3 class="media-heading">Longitude</h3>
+            {{emplacement.lng}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

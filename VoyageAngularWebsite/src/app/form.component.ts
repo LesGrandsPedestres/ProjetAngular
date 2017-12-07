@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import {Component, AfterViewInit} from '@angular/core';
 import {Router} from "@angular/router";
+declare var appMaster: any;
 
 @Component({
   selector: 'my-form',
   templateUrl: './form.component.html',
 })
-export class FormComponent {
+export class FormComponent implements AfterViewInit {
   name = 'Angular';
 
   username: string;
@@ -18,5 +19,15 @@ export class FormComponent {
 
   navigate(destination: string){
     this.router.navigateByUrl(destination);
+  }
+
+  ngAfterViewInit() {
+    appMaster.smoothScroll();
+    appMaster.reviewsCarousel();
+    appMaster.screensCarousel();
+    appMaster.animateScript();
+    appMaster.revSlider();
+    appMaster.scrollMenu();
+    appMaster.placeHold();
   }
 }

@@ -2,7 +2,6 @@ import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
-import {google} from "@agm/core/services/google-maps-types";
 
 @Injectable()
 export class GeocodeService {

@@ -1,22 +1,51 @@
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">
-                JmePromeneAvecMesValises
-            </a>
-        </div>
-        <ul class="nav navbar-nav">
-            <li><a href="/">Mes Voyages</a></li>
-            <li><a (click)="navigate('/')">Voyages Partagés</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right" *ngIf="!isLogged()">
-            <li><a (click)="navigate('/account')"><span class="glyphicon glyphicon-user"></span> Login or Register</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right" *ngIf="isLogged()">
-            <p class="navbar-text">Signed in as <b>{{username}}</b></p>
-            <li><a (click)="navigate('/logout')"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-        </ul>
-    </div>
-</nav>
+<!--<nav class="navbar navbar-default">-->
+    <!--<div class="container-fluid">-->
+        <!--<div class="navbar-header">-->
+            <!--<a class="navbar-brand" href="#">-->
+                <!--JmePromeneAvecMesValises-->
+            <!--</a>-->
+        <!--</div>-->
+        <!--<ul class="nav navbar-nav">-->
+            <!--<li><a href="/">Mes Voyages</a></li>-->
+            <!--<li><a (click)="navigate('/')">Voyages Partagés</a></li>-->
+        <!--</ul>-->
+        <!--<ul class="nav navbar-nav navbar-right" *ngIf="!isLogged()">-->
+            <!--<li><a (click)="navigate('/account')"><span class="glyphicon glyphicon-user"></span> Login or Register</a></li>-->
+        <!--</ul>-->
+        <!--<ul class="nav navbar-nav navbar-right" *ngIf="isLogged()">-->
+            <!--<p class="navbar-text">Signed in as <b>{{username}}</b></p>-->
+            <!--<li><a (click)="navigate('/logout')"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>-->
+        <!--</ul>-->
+    <!--</div>-->
+<!--</nav>-->
 
-<router-outlet></router-outlet>
+<!--<router-outlet></router-outlet>-->
+
+<directions></directions>
+
+<div class="wrapper">
+
+    <geocode></geocode>
+
+    <localisation></localisation>
+
+    <suggestion></suggestion>
+
+    <footer>
+        <div class="container">
+            <a href="#" class="sp-effect3">
+                <img src="img/freeze/logo.png" alt="" class="logo">
+            </a>
+            <div class="social">
+                <a href="#" class="sp-effect3"><i class="fa fa-twitter fa-lg"></i></a>
+                <a href="#" class="sp-effect3"><i class="fa fa-google-plus fa-lg"></i></a>
+                <a href="#" class="sp-effect3"><i class="fa fa-facebook fa-lg"></i></a>
+            </div>
+            <div class="rights">
+                <p>Copyright &copy; 2014</p>
+                <p>Template by <a href="http://www.scoopthemes.com" target="_blank">ScoopThemes</a></p>
+            </div>
+        </div>
+    </footer>
+
+</div>

@@ -18,6 +18,14 @@ import { RouterModule } from "@angular/router";
 import {BrowserModule} from "@angular/platform-browser";
 import {LogoutComponent} from "./logout.component";
 import { AgmCoreModule } from '@agm/core';
+import {GeocodeComponent} from "./geocode/geocode.component";
+import {DirectionsComponent} from "./directions/directions.component";
+import {MapsComponent} from "./maps/maps.component";
+import {LocalisationComponent} from "./localisation/localisation.component";
+import {MarkerDirective} from "./maps/marker.directive";
+import {SuggestionComponent} from "./suggestion/suggestion.component";
+import {DirectionsDirective} from "./maps/directions.directive";
+import {GeocodeService} from "./maps/geocode.service";
 
 @NgModule({
     imports:      [
@@ -42,14 +50,22 @@ import { AgmCoreModule } from '@agm/core';
         UserComponent,
         VoyageComponent,
         LogoutComponent,
-        SpiComponent
+        SpiComponent, 
+        GeocodeComponent, 
+        DirectionsComponent, 
+        MapsComponent, 
+        LocalisationComponent, 
+        MarkerDirective, 
+        SuggestionComponent, 
+        DirectionsDirective
     ],
     providers:    [
         ActiviteService,
         JourService,
         TransportService,
         UserService,
-        VoyageService
+        VoyageService,
+        GeocodeService
     ],
     bootstrap:    [ FormComponent ]
 })

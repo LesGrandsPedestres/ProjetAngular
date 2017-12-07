@@ -1,0 +1,40 @@
+
+<section id="geocode">
+  <div class="container">
+
+    <div class="section-heading sp-effect3">
+      <h1>Géocoder</h1>
+      <div class="divider"></div>
+      <p>Trouver un point latitude / longitude à partir d'une adresse</p>
+    </div>
+    <div class="row">
+      <div class="title sp-effect3">
+        <p>Exemple</p>
+      </div>
+      <div class="col-md-3 col-sm-3 col-xs-6">
+        <div class="about-item sp-effect2">
+          <h3>Adresse</h3>
+          <input class="form-control" [(ngModel)]="adresse" placeholder="Adresse"/>
+          <br />
+          <button class="btn btn-default btn-lg" (click)="geocode()">Géocoder</button>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-3 col-xs-6" >
+        <div class="about-item sp-effect5">
+          <h3>Résultat</h3>
+          <p>Adresse formaté : {{emplacement.adresse}}</p>
+          <p>Latitude : {{emplacement.lat}}</p>
+          <p>Longitude : {{emplacement.lng}}</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-6" >
+        <div class="about-item sp-effect1">
+          <spi-map [emplacement]="emplacement" [zoom]="13">
+            <spi-marker [emplacement]="emplacement"></spi-marker>
+          </spi-map>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
