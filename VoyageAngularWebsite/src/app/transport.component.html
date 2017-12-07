@@ -24,7 +24,7 @@
              data-easing="Power4.easeOut"
              style="width:90%">
             <spi-map [emplacement]="emplacement" [zoom]="15">
-                <spi-direction [mode]="'DRIVING'" [origin]="'Masson Montréal'" [destination]="'Cégep Montpetit'" [waypoints]="waypoints"></spi-direction>
+                <spi-direction [mode]="getValueForModeTransport(getModeTransport(transport.TypeTransport))" [origin]="transport.Destination.Origine" [destination]="transport.Destination.Arrivee" [waypoints]="waypoints"></spi-direction>
             </spi-map>
         </div>
     </div>

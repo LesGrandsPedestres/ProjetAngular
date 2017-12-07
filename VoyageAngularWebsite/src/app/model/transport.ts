@@ -12,10 +12,8 @@ export class Transport{
 
 export enum ModeTransport{
     Bus,
-    Avion,
     Marche,
     Velo,
-    Train,
     Automobile,
     Taxi,
     Uber

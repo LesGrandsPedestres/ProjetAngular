@@ -7,7 +7,7 @@ using System.Web;
 
 namespace WebApiVoyage.Models
 {
-    public enum ModeTransport { Bus,Avion,Marche,Velo,Train, Automobile, Taxi, Uber}
+    public enum ModeTransport { Bus,Marche,Velo, Automobile, Taxi, Uber}
     public class Transport
     {
         [Key]

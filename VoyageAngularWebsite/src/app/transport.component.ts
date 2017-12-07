@@ -37,4 +37,31 @@ export class TransportComponent implements OnInit{
   getModeTransport(index: number) : string{
     return ModeTransport[index];
   }
+
+  getValueForModeTransport(mode: string) : string{
+    var value;
+    switch (mode) {
+      case "Bus":
+        value = "TRANSIT";
+        break;
+      case "Marche":
+        value = "DRIVING";
+        break;
+      case "Velo":
+        value = "BICYCLING";
+        break;
+      case "Automobile":
+        value = "DRIVING";
+        break;
+      case "Taxi":
+        value = "DRIVING";
+        break;
+      case "Uber":
+        value = "DRIVING";
+        break;
+      default:
+        value = "DRIVING";
+    }
+    return value;
+  }
 }

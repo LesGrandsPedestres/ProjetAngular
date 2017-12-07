@@ -33,5 +33,7 @@ namespace WebApiVoyage.Models
         public System.Data.Entity.DbSet<Activite> Activites { get; set; }
         public System.Data.Entity.DbSet<Jour> Jours { get; set; }
         public System.Data.Entity.DbSet<Voyage> Voyages { get; set; }
+
+        public System.Data.Entity.DbSet<Transport> Transports { get; set; }
     }
 }
