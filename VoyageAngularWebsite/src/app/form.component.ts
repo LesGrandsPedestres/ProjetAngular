@@ -6,7 +6,7 @@ declare var appMaster: any;
   selector: 'my-form',
   templateUrl: './form.component.html',
 })
-export class FormComponent implements AfterViewInit {
+export class FormComponent /*implements AfterViewInit*/ {
   name = 'Angular';
 
   username: string;
@@ -21,13 +21,13 @@ export class FormComponent implements AfterViewInit {
     this.router.navigateByUrl(destination);
   }
 
-  ngAfterViewInit() {
-    appMaster.smoothScroll();
-    appMaster.reviewsCarousel();
-    appMaster.screensCarousel();
-    appMaster.animateScript();
-    appMaster.revSlider();
-    appMaster.scrollMenu();
-    appMaster.placeHold();
-  }
+  // ngAfterViewInit() {
+  //   appMaster.smoothScroll();
+  //   appMaster.reviewsCarousel();
+  //   appMaster.screensCarousel();
+  //   appMaster.animateScript();
+  //   appMaster.revSlider();
+  //   appMaster.scrollMenu();
+  //   appMaster.placeHold();
+  // }
 }
