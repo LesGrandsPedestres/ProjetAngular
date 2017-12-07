@@ -6,7 +6,7 @@ import {Activite} from "./model/activite";
 export class ActiviteService{
     constructor(private http: Http) { }
 
-    getActivites():List<Activite>{
+/*    getActivites():List<Activite>{
 
         return this.http.get("http://localhost:1769/api/Activites");
     }
@@ -27,5 +27,5 @@ export class ActiviteService{
 
     deleteActivite(id:number):void{
         this.http.delete('http://localhost:11601/api/Activites/'+id.toString());
-    }
+    }*/
 }

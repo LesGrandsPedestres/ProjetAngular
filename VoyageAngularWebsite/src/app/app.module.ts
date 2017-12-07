@@ -1,7 +1,7 @@
 import { NgModule }    from '@angular/core';
 import { FormsModule }   from '@angular/forms';
 
-import {SpiComponent}  from './spi.component';
+import { SpiComponent }  from './spi.component';
 import { FormComponent }  from './form.component';
 import { VoyageComponent } from "./voyage.component";
 import { ActiviteComponent } from "./activite.component";

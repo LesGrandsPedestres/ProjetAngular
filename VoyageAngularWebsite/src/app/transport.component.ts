@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {TransportService} from "./transport.service";
 import {ModeTransport} from "./model/transport";
-import {Emplacement, Waypoint} from '../maps/geocode.service';
+import {Emplacement, Waypoint} from './maps/geocode.service';
 
 @Component({
   selector: 'transport',
