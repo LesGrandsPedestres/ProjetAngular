@@ -7,9 +7,8 @@ namespace WebApiVoyage.Models
 {
     public class Destination
     {
-        public double LongitudeDepart { get; set; }
-        public double LatitudeDepart { get; set; }
-        public double LongitudeArrivee { get; set; }
-        public double LatitudeArrivee { get; set; }
+        public string Origine { get; set; }
+        public string Arrivee { get; set; }
+
     }
 }

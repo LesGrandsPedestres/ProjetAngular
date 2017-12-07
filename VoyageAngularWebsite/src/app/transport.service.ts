@@ -15,10 +15,8 @@ export class TransportService{
             TransportId: 1,
             TypeTransport: ModeTransport.Automobile,
             Destination: {
-                LongitudeDepart: -73.493892,
-                LatitudeDepart: 45.535493,
-                LongitudeArrivee: -73.493892,
-                LatitudeArrivee: 45.00000,
+                Origine: "Cégep Montpetit",
+                Arrivee: "Masson Montréal",
             },
             DateDepart: new Date(),
             DateArrivee: new Date(),
@@ -28,12 +26,10 @@ export class TransportService{
 
         this.transports.push({
             TransportId: 2,
-            TypeTransport: ModeTransport.Automobile,
+            TypeTransport: ModeTransport.Bus,
             Destination: {
-                LongitudeDepart: -3.493892,
-                LatitudeDepart: 4.535493,
-                LongitudeArrivee: -3.493892,
-                LatitudeArrivee: 5.53000,
+                Origine: "Cégep Montpetit",
+                Arrivee: "Stade Olympique",
             },
             DateDepart: new Date(),
             DateArrivee: new Date(),

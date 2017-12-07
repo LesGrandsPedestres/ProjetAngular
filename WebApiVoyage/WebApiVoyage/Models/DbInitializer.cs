@@ -47,7 +47,43 @@ namespace WebApiVoyage.Models
                 var result = userManager.AddToRole(user2.Id, "membre");
             }
             #endregion
-       
+
+            #region Transport
+            Destination dest1 = new Destination();
+            dest1.Origine = "cegep montpetit";
+            dest1.Arrivee = "stade olympique";
+
+            Destination dest2 = new Destination();
+            dest1.Origine = "terminus longueuil";
+            dest1.Arrivee = "centre bell";
+
+            var transport1 = new Transport() {
+                TransportId = 1,
+                VoyageId = 1,
+                DateDepart = DateTime.Now.AddDays(7),
+                DateArrivee = DateTime.Now.AddDays(8),
+                Cout = 250.00,
+                TypeTransport = ModeTransport.Automobile,
+                Destination = dest1
+                //Might crash cause no Voyage?
+            };
+
+            var transport2 = new Transport()
+            {
+                TransportId = 1,
+                VoyageId = 1,
+                DateDepart = DateTime.Now.AddDays(7),
+                DateArrivee = DateTime.Now.AddDays(8),
+                Cout = 250.00,
+                TypeTransport = ModeTransport.Bus,
+                Destination = dest2
+                //Might crash cause no Voyage?
+            };
+
+            context.Transports.Add(transport1);
+            context.Transports.Add(transport2);
+            #endregion
+
             context.SaveChanges();
         }
     }
