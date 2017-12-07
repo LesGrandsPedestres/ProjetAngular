@@ -51,6 +51,6 @@ import { AgmCoreModule } from '@agm/core';
         UserService,
         VoyageService
     ],
-    bootstrap:    [ TransportComponent ]
+    bootstrap:    [ FormComponent ]
 })
 export class AppModule { }
