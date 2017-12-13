@@ -3,6 +3,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNet.Identity.Owin;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApiVoyage.Models
 {
@@ -21,19 +25,20 @@ namespace WebApiVoyage.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+             : base("DefaultConnection", throwIfV1Schema: false)
         {
+            
         }
-        
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
+        
+        public DbSet<Activite> Activites { get; set; }
+        public DbSet<Jour> Jours { get; set; }
+        public DbSet<Voyage> Voyages { get; set; }
 
-        public System.Data.Entity.DbSet<Activite> Activites { get; set; }
-        public System.Data.Entity.DbSet<Jour> Jours { get; set; }
-        public System.Data.Entity.DbSet<Voyage> Voyages { get; set; }
-
-        public System.Data.Entity.DbSet<Transport> Transports { get; set; }
+        public DbSet<Transport> Transports { get; set; }
     }
 }

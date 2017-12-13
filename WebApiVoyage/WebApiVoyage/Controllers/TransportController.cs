@@ -12,6 +12,13 @@ namespace WebApiVoyage.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        [Route("api/GetTransports")]
+        [HttpGet]
+        public List<Transport> GetTransports()
+        {
+            
+            return db.Transports.ToList();
+        }
         // GET: api/GetTransportsForVoyage/5
         [Route("api/GetTransportsForVoyage/{id}")]
         [HttpGet]
