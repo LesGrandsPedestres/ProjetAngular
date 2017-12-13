@@ -34,14 +34,15 @@ import { VoyageCreateComponent } from "./voyagecreate.component"
         BrowserModule,
         FormsModule,
         HttpModule,
-        /*AgmCoreModule.forRoot({
+        AgmCoreModule.forRoot({
             apiKey: 'AIzaSyB2EuOW-iYY7uNt5uA0RMKG57UJUIc4rRs'
-        }),*/
+        }),
         RouterModule.forRoot([
             { path: '', redirectTo: '/home', pathMatch: 'full' },
             { path: 'home', component: VoyageComponent },
             { path: 'account', component: UserComponent },
             { path: 'logout', component: LogoutComponent },
+            { path: 'jours/:id',component:ActiviteComponent},
             { path:'createvoyage' , component: VoyageCreateComponent}
         ])
     ],

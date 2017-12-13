@@ -1,11 +1,10 @@
 <div class="container">
     <div class="row">
         <h2>Les Voyages</h2>
-        <div *ngFor="let v of voyages; let i = index;" id="accordion{{v.id}}">
+        <div *ngFor="let v of voyages;" id="{{v.id}}">
             <h3>{{v.titre}}</h3>
-            <div>
-                <transport [voyageId]="v.id"></transport>
-            </div>
+            <transport [voyageId]="v.id"></transport>
+            <a href="/jour/{{v.id}}" class="btn btn-info" role="button">Voir les activités</a>
         </div>
     </div>
 </div>
