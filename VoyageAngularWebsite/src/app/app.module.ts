@@ -33,6 +33,7 @@ import { VoyageCreateComponent } from "./voyagecreate.component"
     imports:      [
         BrowserModule,
         FormsModule,
+        RouterModule,
         HttpModule,
         AgmCoreModule.forRoot({
             apiKey: 'AIzaSyB2EuOW-iYY7uNt5uA0RMKG57UJUIc4rRs'

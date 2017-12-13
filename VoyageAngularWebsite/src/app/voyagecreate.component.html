@@ -1,21 +1,22 @@
-<<div class="row" style="display: none">
+<div class="container">
+    <div class="row">
     <div class="col-md-12">
-        <form class="hidden-form">
-            <div class="row">
+        <form class="hidden-form" (ngSubmit)="onSubmit()">
+            <div class="row form-group">
                 <div class="col-25">
                     <label for="fname">Titre Voyage</label>
                 </div>
                 <div class="col-75">
-                    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                    <input type="text" [(ngModel)]="NameVoyage" id="fname" name="firstname" placeholder="Pérou" class="form-control">
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row form-group">
                 <div class="col-25">
                     <label for="NbJour">Nombre de jour</label>
                 </div>
                 <div class="col-75">
-                    <select id="NbJour" name="NbJour">
+                    <select [(ngModel)]="NombreJour" id="NbJour" name="NbJour" class="form-control">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -50,17 +51,18 @@
                     </select>
                 </div>
             </div>
-            <div class="row">
+            <div class="row form-group">
                 <div class="col-25">
-                    <label for="Budget">Subject</label>
+                    <label for="Budget">Budget</label>
                 </div>
                 <div class="col-75">
-                    <input type="text" id="Budget" name="Budget" placeholder="0.00$">
+                    <input [(ngModel)]="budget" type="text" id="Budget" name="Budget" placeholder="0.00$" class="form-control">
                 </div>
             </div>
-            <div class="row">
-                <input type="submit" value="Créer le voyage">
+            <div class="row form-group">
+                <input  class="btn btn-primary" type="submit" value="Créer le voyage">
             </div>
         </form>
+        </div>
     </div>
 </div>

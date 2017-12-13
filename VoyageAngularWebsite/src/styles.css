@@ -5,7 +5,7 @@ h1 {
 }
 .header{height:50px;background:#222;margin-bottom:20px;}
 .header a.btnPush{color:#fff;padding:10px 15px;background:#555;}
-.hidden-form{display:none;}
+.hidden-form{}
 
 .btnPush {
   background: #3498db;
@@ -33,3 +33,4 @@ h1 {
   background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
   text-decoration: none;
 }
+

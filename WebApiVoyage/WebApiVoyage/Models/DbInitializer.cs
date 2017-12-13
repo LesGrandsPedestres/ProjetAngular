@@ -53,6 +53,10 @@ namespace WebApiVoyage.Models
             voy1.TitreVoyage = "Voyage des Pédestres";
             voy1.Budget = 5200.00;
             voy1.BudgetRestant = 2600.00;
+<<<<<<< HEAD
+           
+=======
+>>>>>>> 120bb38c893f701d157d60b843e08e7933140912
             voy1.ListeVoyageur = new List<ApplicationUser>
             {
                 user,

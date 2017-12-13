@@ -14,10 +14,10 @@ export class VoyageComponent implements OnInit {
 
     ngOnInit():void {
         this.voyages = [
-            {id: "1", titre: "Pérou", desc: "Idk"},
-            {id: "2", titre: "Italie", desc: "Idk2"},
-            {id: "3", titre: "Penis", desc: "Idk3"},
-            {id: "4", titre: "Pussytown", desc: "Idk4"}
+            {VoyageId: "1", TitreVoyage: "Pérou",Budget: 521.00,NbJours: 14},
+            {VoyageId: "2", TitreVoyage: "Italie", Budget: 5870.00, NbJours:15},
+            {VoyageId: "3", TitreVoyage: "Penis", Budget:0.69, NbJours : 1},
+            {VoyageId: "4", TitreVoyage: "Pussytown",Budget:17000.90, NbJours: 365}
         ];
     }
 

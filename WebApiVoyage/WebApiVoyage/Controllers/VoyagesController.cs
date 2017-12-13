@@ -9,6 +9,8 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using WebApiVoyage.Models;
+using Microsoft.AspNet.Identity;
+
 
 namespace WebApiVoyage.Controllers
 {
@@ -17,13 +19,16 @@ namespace WebApiVoyage.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/Voyages
+        [Route("api/Voyages/GetVoyages")]
         public IQueryable<Voyage> GetVoyages()
         {
-            return db.Voyages;
+            
+            return db.Voyages.Include(y=> y.Transport).Include(h=>h.Jours).Include(i=>i.ListeVoyageur);
         }
 
         // GET: api/Voyages/5
         [ResponseType(typeof(Voyage))]
+        [Route("api/Voyages/{id}")]
         public IHttpActionResult GetVoyage(int id)
         {
             Voyage voyage = db.Voyages.Find(id);
@@ -37,6 +42,7 @@ namespace WebApiVoyage.Controllers
 
         // PUT: api/Voyages/5
         [ResponseType(typeof(void))]
+        [Route("api/Voyages/GetVoyagesById/{id}")]
         public IHttpActionResult PutVoyage(int id, Voyage voyage)
         {
             if (!ModelState.IsValid)
@@ -72,17 +78,29 @@ namespace WebApiVoyage.Controllers
 
         // POST: api/Voyages
         [ResponseType(typeof(Voyage))]
-        public IHttpActionResult PostVoyage(Voyage voyage)
+        [Route("api/Voyages/CreateVoyage")]
+        public Boolean CreateVoyage(Voyage voyage)
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+                return false;
             }
-
+            string idUser = User.Identity.GetUserId();
+            voyage.ListeVoyageur = new List<ApplicationUser> {db.Users.Find(idUser) };
+            voyage.BudgetRestant = voyage.Budget;
+            voyage.Jours = new List<Jour>();
+            for (int i = 0; i < voyage.NbJours; i++)
+            {
+                Jour a = new Jour();
+                a.ListeActivite = new List<Activite>();
+                a.VoyageId = voyage.VoyageId;
+                voyage.Jours.Add(a);
+            }
+            voyage.Transport = new List<Transport>();
             db.Voyages.Add(voyage);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = voyage.VoyageId }, voyage);
+            return true;
         }
 
         // DELETE: api/Voyages/5
