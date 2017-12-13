@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Description;
 using WebApiVoyage.Models;
 
 namespace WebApiVoyage.Controllers
@@ -38,6 +39,25 @@ namespace WebApiVoyage.Controllers
                 transportsDTO.Add(trans.toDTO());
             }
             return transportsDTO;
+        }
+
+        [ResponseType(typeof(TransportDTO))]
+        [Route("api/AddDestination")]
+        [HttpPost]
+        public IHttpActionResult AddDestination(Transport transport)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            transport.TypeTransport = ModeTransport.Automobile;
+
+            db.Transports.Add(transport); 
+            db.SaveChanges();
+
+            return Ok(transport.toDTO());
+
         }
 
 
