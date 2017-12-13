@@ -17,13 +17,15 @@ namespace WebApiVoyage.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/Activites
-        public IQueryable<Activite> GetActivites()
+        [Route("api/Activites/GetActivitesByVoyageId/{VoyageId}")]
+        public List<Activite> GetActivites(int VoyageId)
         {
-            return db.Activites;
+            return db.Activites.Where(x => x.Transport.VoyageId == VoyageId).ToList();
         }
 
         // GET: api/Activites/5
         [ResponseType(typeof(Activite))]
+        [Route("api/Activites/GetActiviteById/{id}")]
         public IHttpActionResult GetActivite(int id)
         {
             Activite activite = db.Activites.Find(id);
@@ -37,14 +39,15 @@ namespace WebApiVoyage.Controllers
 
         // PUT: api/Activites/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutActivite(int id, Activite activite)
+        [Route("api/Activites/ModifyActivite/{ActivityId}")]
+        public IHttpActionResult PutActivite(int ActivityId, Activite activite)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != activite.ActiviteId)
+            if (ActivityId != activite.ActiviteId)
             {
                 return BadRequest();
             }
@@ -57,7 +60,7 @@ namespace WebApiVoyage.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ActiviteExists(id))
+                if (!ActiviteExists(ActivityId))
                 {
                     return NotFound();
                 }
@@ -72,6 +75,7 @@ namespace WebApiVoyage.Controllers
 
         // POST: api/Activites
         [ResponseType(typeof(Activite))]
+        [Route("api/Activites/CreateActivity")]
         public IHttpActionResult PostActivite(Activite activite)
         {
             if (!ModelState.IsValid)
@@ -87,6 +91,7 @@ namespace WebApiVoyage.Controllers
 
         // DELETE: api/Activites/5
         [ResponseType(typeof(Activite))]
+        [Route("api/Activites/DeleteActivity/{id}")]
         public IHttpActionResult DeleteActivite(int id)
         {
             Activite activite = db.Activites.Find(id);

@@ -20,7 +20,7 @@ namespace WebApiVoyage.Controllers
             return db.Transports.ToList();
         }
         // GET: api/GetTransportsForVoyage/5
-        [Route("api/GetTransportsForVoyage/{id}")]
+        [Route("api/GetTransportsForVoyage/{voyageId}")]
         [HttpGet]
         public List<TransportDTO> GetTransportsForVoyage(int voyageId)
         {
