@@ -18,5 +18,10 @@ namespace WebApiVoyage.Models
 
         [InverseProperty("JourneeActivite")]
         public virtual List<Activite> ListeActivite { get; set; }
+        [ForeignKey("Voyage")]
+        public int VoyageId { get; set; }
+
+        [InverseProperty("Jours")]
+        public virtual Voyage Voyage { get; set; }
     }
 }

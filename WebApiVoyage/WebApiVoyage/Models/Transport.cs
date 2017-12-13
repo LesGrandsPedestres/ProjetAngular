@@ -12,7 +12,7 @@ namespace WebApiVoyage.Models
     {
         [Key]
         public int TransportId { get; set; }
-
+        [EnumDataType(typeof(ModeTransport))]
         public ModeTransport TypeTransport { get; set; }
 
         public Destination Destination { get; set; }
@@ -23,7 +23,7 @@ namespace WebApiVoyage.Models
         public int VoyageId { get; set;}
 
         [InverseProperty("Transport")]
-        public Voyage Voyage { get; set; }
+        public virtual Voyage Voyage { get; set; }
 
         public TransportDTO toDTO()
         {

@@ -27,10 +27,12 @@ namespace WebApiVoyage.Models
         public double BudgetRestant { get; set; }
         
         [InverseProperty("Voyage")]
-        public List<Transport> Transport { get; set; }
+        public virtual List<Transport> Transport { get; set; }
+        [InverseProperty("Voyage")]
+        public virtual List<Jour> Jours { get; set; }
 
         
-        public IEnumerable<ApplicationUser> ListeVoyageur { get; set;}
+        public virtual List<ApplicationUser> ListeVoyageur { get; set;}
         
 
     }

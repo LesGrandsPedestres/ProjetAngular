@@ -14,11 +14,6 @@ namespace WebApiVoyage.Models
         [Required]
         public string TitreActivite { get; set; }
         [Required]
-        [DataType(DataType.DateTime)]
-        public DateTime Date { get; set; }
-
-
-        [Required]
         public string Localisation { get; set; } //TODO : Remove that for transport
 
         public double Cout { get; set; }
