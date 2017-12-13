@@ -24,6 +24,8 @@ namespace WebApiVoyage.Models
 
         public double BudgetRestant { get; set; }
 
+        public Transport Transport { get; set; }
+
         [InverseProperty("Voyage")]
         public IEnumerable<ApplicationUser> ListeVoyageur { get; set;}
         

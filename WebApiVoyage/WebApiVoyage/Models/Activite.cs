@@ -15,8 +15,10 @@ namespace WebApiVoyage.Models
         public string TitreActivite { get; set; }
         [Required]
         public DateTime Date { get; set; }
+
+
         [Required]
-        public string Localisation { get; set; }
+        public string Localisation { get; set; } //TODO : Remove that for transport
 
         public double Cout { get; set; }
 
@@ -24,8 +26,9 @@ namespace WebApiVoyage.Models
         public int JourId { get; set; }
         [InverseProperty("ListeActivite")]
         public Jour JourneeActivite { get; set; }
-
-
+        
+        //Chaque activité possède un transport indiquant de ou à ou.
+        public Transport Transport { get; set; }
     }
 
 }

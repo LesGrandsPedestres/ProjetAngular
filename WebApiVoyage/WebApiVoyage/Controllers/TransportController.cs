@@ -4,31 +4,38 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using WebApiVoyage.Models;
 
 namespace WebApiVoyage.Controllers
 {
     public class TransportController : ApiController
     {
-        // GET: api/Transport
-        public IEnumerable<string> Get()
+        private ApplicationDbContext db = new ApplicationDbContext();
+
+        // GET: api/GetTransportsForVoyage/5
+        [Route("api/GetTransportsForVoyage/{id}")]
+        [HttpGet]
+        public TransportDTO GetTransportsForVoyage(int voyageId)
         {
-            return new string[] { "value1", "value2" };
+            Voyage voyage = db.Voyages.Find(voyageId);
+            if(voyage == null)
+            {
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            }
+            return voyage.Transport.toDTO();
         }
 
-        // GET: api/Transport/5
-        public string Get(int id)
+        // GET: api/GetTransportsForVoyage/5
+        [Route("api/GetTransportsForActivite/{id}")]
+        [HttpGet]
+        public TransportDTO GetTransportsForActivite(int activiteId)
         {
-            return "value";
-        }
-
-        // POST: api/Transport
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT: api/Transport/5
-        public void Put(int id, [FromBody]string value)
-        {
+            Activite activite = db.Activites.Find(activiteId);
+            if (activite == null)
+            {
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            }
+            return activite.Transport.toDTO();
         }
 
         // DELETE: api/Transport/5
