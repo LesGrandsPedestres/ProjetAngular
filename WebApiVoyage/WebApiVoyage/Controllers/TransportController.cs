@@ -38,6 +38,17 @@ namespace WebApiVoyage.Controllers
             return activite.Transport.toDTO();
         }
 
+
+        // POST: api/Transport
+        public void Post([FromBody]string value)
+        {
+        }
+
+        // PUT: api/Transport/5
+        public void Put(int id, [FromBody]string value)
+        {
+        }
+
         // DELETE: api/Transport/5
         public void Delete(int id)
         {

@@ -1,15 +1,30 @@
 import {Injectable} from "@angular/core";
-import {Http} from "@angular/http";
+import {Http, Headers, RequestOptions} from "@angular/http";
 import {Transport, ModeTransport} from "./model/transport";
 
 @Injectable()
 export class TransportService{
 
     public transports: Transport[];
+    public transport: Transport;
 
     constructor(private http: Http) {}
 
-    getAllVoyageTransports(){
+    getAllVoyageTransports(voyageId: number){
+
+        let token = localStorage.getItem('Token');
+        let headers = new Headers({
+            'Content-Type': 'application/json',
+            'Authorization' : 'Bearer ' + token
+        });
+        let options = new RequestOptions({headers: headers});
+        this.http.get('http://localhost:1769/api/GetTransportsForVoyage/' + voyageId, options).toPromise()
+            .then(response => {
+                let transport : Transport = response.json();
+                this.transport = transport;
+            });
+
+
         this.transports = [];
         this.transports.push({
             TransportId: 1,

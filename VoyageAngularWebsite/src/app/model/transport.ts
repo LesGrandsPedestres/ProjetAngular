@@ -4,8 +4,6 @@ export class Transport{
     TransportId: number;
     TypeTransport: ModeTransport;
     Destination: Destination;
-    DateDepart: Date;
-    DateArrivee: Date;
     Cout: number;
     VoyageId: number;
 }
