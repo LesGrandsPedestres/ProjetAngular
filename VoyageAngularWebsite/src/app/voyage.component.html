@@ -4,7 +4,7 @@
         <div *ngFor="let v of voyages;" id="{{v.id}}">
             <h3>{{v.titre}}</h3>
             <transport [voyageId]="v.id"></transport>
-            <a href="/jour/{{v.id}}" class="btn btn-info" role="button">Voir les activités</a>
+            <a href="/jours/{{v.id}}" class="btn btn-info" role="button">Voir l'horaire du voyage</a>
         </div>
     </div>
 </div>
