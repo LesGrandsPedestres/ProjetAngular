@@ -20,15 +20,14 @@ export class TransportComponent implements OnInit{
 
   @Input() voyageId: number;
   emplacement: Emplacement = { lat: 45.501459, lng: -73.567543, adresse: '', bounds: null };
-  waypoints: Waypoint[] = [];
 
-/*  waypoints: Waypoint[] = [{
+  waypoints: Waypoint[] = [{
     location: 'Stade olympique',
     stopover: false
   }, {
     location: '822 Rue Saint-Laurent Ouest, Longueuil, QC J4K 1C3',
     stopover: true
-  }];*/
+  }];
 
   constructor(private transportService: TransportService) { }
 
