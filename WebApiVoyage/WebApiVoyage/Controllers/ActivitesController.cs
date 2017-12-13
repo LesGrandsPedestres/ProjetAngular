@@ -24,9 +24,9 @@ namespace WebApiVoyage.Controllers
         }
 
         // GET: api/Activites/5
-        [ResponseType(typeof(Activite))]
+        [ResponseType(typeof(ActiviteDTO))]
         [Route("api/Activites/GetActiviteById/{id}")]
-        public Activite GetActivite(int id)
+        public ActiviteDTO GetActivite(int id)
         {
             Activite activite = db.Activites.Find(id);
             if (activite == null)
@@ -34,7 +34,7 @@ namespace WebApiVoyage.Controllers
                 throw new ArgumentNullException();
             }
 
-            return activite;
+            return activite.toDTO();
         }
 
         // PUT: api/Activites/5
@@ -74,9 +74,9 @@ namespace WebApiVoyage.Controllers
         }
 
         // POST: api/Activites
-        [ResponseType(typeof(Activite))]
-        [Route("api/Activites/CreateActivity")]
-        public IHttpActionResult PostActivite(Activite activite)
+        [ResponseType(typeof(ActiviteDTO))]
+        [Route("api/Activites/CreateActivity/{JourId}")]
+        public IHttpActionResult PostActivite(int JourId,Activite activite)
         {
             if (!ModelState.IsValid)
             {
@@ -86,11 +86,11 @@ namespace WebApiVoyage.Controllers
             db.Activites.Add(activite);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = activite.ActiviteId }, activite);
+            return CreatedAtRoute("DefaultApi", new { id = activite.ActiviteId }, activite.toDTO());
         }
 
         // DELETE: api/Activites/5
-        [ResponseType(typeof(Activite))]
+        [ResponseType(typeof(ActiviteDTO))]
         [Route("api/Activites/DeleteActivity/{id}")]
         public IHttpActionResult DeleteActivite(int id)
         {
@@ -103,7 +103,7 @@ namespace WebApiVoyage.Controllers
             db.Activites.Remove(activite);
             db.SaveChanges();
 
-            return Ok(activite);
+            return Ok(activite.toDTO());
         }
 
         protected override void Dispose(bool disposing)
