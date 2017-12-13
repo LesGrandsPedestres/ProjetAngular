@@ -27,6 +27,7 @@ import {SuggestionComponent} from "./suggestion/suggestion.component";
 import {DirectionsDirective} from "./maps/directions.directive";
 import {GeocodeService} from "./maps/geocode.service";
 import {MapsService} from "./maps/maps.service";
+import { VoyageCreateComponent } from "./voyagecreate.component"
 
 @NgModule({
     imports:      [
@@ -40,7 +41,9 @@ import {MapsService} from "./maps/maps.service";
             { path: '', redirectTo: '/home', pathMatch: 'full' },
             { path: 'home', component: VoyageComponent },
             { path: 'account', component: UserComponent },
-            { path: 'logout', component: LogoutComponent }
+            { path: 'logout', component: LogoutComponent },
+            { path: 'jours/:id',component:ActiviteComponent},
+            { path:'createvoyage' , component: VoyageCreateComponent}
         ])
     ],
     declarations: [
@@ -58,7 +61,8 @@ import {MapsService} from "./maps/maps.service";
         LocalisationComponent,
         MarkerDirective,
         SuggestionComponent,
-        DirectionsDirective
+        DirectionsDirective,
+        VoyageCreateComponent
     ],
     providers:    [
         ActiviteService,
