@@ -14,6 +14,7 @@ namespace WebApiVoyage.Models
         [Required]
         public string TitreActivite { get; set; }
         [Required]
+        [DataType(DataType.DateTime)]
         public DateTime Date { get; set; }
 
 

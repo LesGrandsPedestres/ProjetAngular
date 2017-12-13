@@ -7,7 +7,7 @@ using System.Web;
 
 namespace WebApiVoyage.Models
 {
-    public enum ModeTransport { Bus,Marche,Velo, Automobile, Taxi, Uber}
+    public enum ModeTransport { NotSet = 0, Bus,Marche,Velo, Automobile, Taxi, Uber}
     public class Transport
     {
         [Key]
@@ -16,16 +16,13 @@ namespace WebApiVoyage.Models
         public ModeTransport TypeTransport { get; set; }
 
         public Destination Destination { get; set; }
-
-        public DateTime DateDepart { get; set; }
-
-        public DateTime DateArrivee { get; set; }
+        
 
         public double Cout { get; set; }
         [ForeignKey("Voyage")]
         public int VoyageId { get; set;}
 
-        [InverseProperty("ListeVoyageur")]
+        [InverseProperty("Transport")]
         public Voyage Voyage { get; set; }
 
         public TransportDTO toDTO()
@@ -34,8 +31,7 @@ namespace WebApiVoyage.Models
             transportDTO.TransportId = this.TransportId;
             transportDTO.TypeTransport = this.TypeTransport;
             transportDTO.Destination = this.Destination;
-            transportDTO.DateDepart = this.DateDepart;
-            transportDTO.DateArrivee = this.DateArrivee;
+          
             transportDTO.Cout = this.Cout;
 
             return transportDTO;
@@ -50,10 +46,6 @@ namespace WebApiVoyage.Models
         public ModeTransport TypeTransport { get; set; }
 
         public Destination Destination { get; set; }
-
-        public DateTime DateDepart { get; set; }
-
-        public DateTime DateArrivee { get; set; }
 
         public double Cout { get; set; }
 
