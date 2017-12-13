@@ -43,8 +43,8 @@ import { VoyageCreateComponent } from "./voyagecreate.component"
             { path: 'home', component: VoyageComponent },
             { path: 'account', component: UserComponent },
             { path: 'logout', component: LogoutComponent },
-            { path: 'jours' , component: JourComponent},
-            { path: 'jours/:id',component:ActiviteComponent},
+            { path: 'jours/:voyageId' , component: JourComponent},
+            { path: 'jours/:voyageId/:jourId', component: ActiviteComponent},
             { path:'createvoyage' , component: VoyageCreateComponent}
         ])
     ],

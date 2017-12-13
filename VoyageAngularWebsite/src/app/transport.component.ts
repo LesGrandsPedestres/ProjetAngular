@@ -1,8 +1,9 @@
 import {Component, OnInit, Input, ViewChild} from '@angular/core';
 import {TransportService} from "./transport.service";
-import {ModeTransport} from "./model/transport";
+import {ModeTransport, Transport} from "./model/transport";
 import {Emplacement, Waypoint} from './maps/geocode.service';
 import {MapsComponent} from "./maps/maps.component";
+import {Destination} from "./model/Destination";
 
 @Component({
   selector: 'transport',
@@ -23,7 +24,10 @@ export class TransportComponent implements OnInit{
   @Input() voyageId: number;
   emplacement: Emplacement = { lat: 45.501459, lng: -73.567543, adresse: '', bounds: null };
 
-  waypoints: Waypoint[] = [{
+  transport: Transport = new Transport();
+  waypoints: Waypoint[] = [];
+
+/*  waypoints: Waypoint[] = [{
     location: 'Stade olympique',
     stopover: true
   }, {
@@ -32,7 +36,7 @@ export class TransportComponent implements OnInit{
   }, {
     location: 'Granby',
     stopover: true
-  }];
+  }];*/
 
   constructor(private transportService: TransportService) { }
 
@@ -41,8 +45,23 @@ export class TransportComponent implements OnInit{
   }
 
   ngOnInit() : void{
-    console.log(this.voyageId);
-    this.transportService.getAllVoyageTransports(this.voyageId);
+    this.transport.Destination = new Destination();
+    this.transportService.getAllVoyageTransports(this.voyageId).then(response => this.setUpTransport(response));
+  }
+
+  setUpTransport(transports: Transport[]){
+    this.transport = transports[0];
+    for(let currentTransport of transports){
+      const index: number = transports.indexOf(currentTransport);
+      if(index == 0){
+        this.transport.Destination.Origine = currentTransport.Destination.Origine;
+      } else {
+        this.waypoints.push({location : currentTransport.Destination.Origine, stopover: true});
+      }
+
+      if(index == transports.length-1)
+        this.transport.Destination.Arrivee = currentTransport.Destination.Arrivee;
+    }
   }
 
   getModeTransport(index: number) : string {
