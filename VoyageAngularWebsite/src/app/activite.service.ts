@@ -1,10 +1,79 @@
 import {Injectable} from "@angular/core";
-import {Http} from "@angular/http";
+import {Http, Headers, RequestOptions} from "@angular/http";
 import {Activite} from "./model/activite";
+import {Jour} from "./Jour";
 
+//Jour et Activite Service
 @Injectable()
 export class ActiviteService{
+
+    public listActivite:Activite[];
+    public listJour:Jour[];
+
     constructor(private http: Http) { }
+
+
+    getJours(id:string):void{
+        let token = localStorage.getItem('Token');
+        let headers = new Headers({
+            'Content-Type': 'application/json',
+            'Authorization' : 'Bearer ' + token
+        });
+        let options = new RequestOptions({headers: headers});
+        this.http.get('http://localhost:2209***/api/Jours/GetJours'+id,options).toPromise()
+            .then(response => {
+                console.log(response.json());
+                this.listJour = response.json();
+            });
+    }
+
+    getJourById(id:string):Promise<Jour>{
+        let Jour:Jour;
+        let token = localStorage.getItem('Token');
+        let headers = new Headers({
+            'Content-Type': 'application/json',
+            'Authorization' : 'Bearer ' + token
+        });
+        let options = new RequestOptions({headers: headers});
+        return this.http.get('http://localhost:2209****/api/Activites/GetActivitesById/'+id, options).toPromise()
+            .then(response =>{
+                console.log(response.json());
+                Jour = response.json();
+                return Jour;
+            });
+    }
+
+    getActivites(id:string):void{
+        let token = localStorage.getItem('Token');
+        let headers = new Headers({
+            'Content-Type': 'application/json',
+            'Authorization' : 'Bearer ' + token
+        });
+        let options = new RequestOptions({headers: headers});
+        this.http.get('http://localhost:2209***/api/Activites/GetActivites'+id,options).toPromise()
+            .then(response => {
+                console.log(response.json());
+                this.listActivite = response.json();
+            });
+    }
+
+    getActiviteParId(id:number):Promise<Activite>{
+        let activite:Activite;
+        let token = localStorage.getItem('Token');
+        let headers = new Headers({
+            'Content-Type': 'application/json',
+            'Authorization' : 'Bearer ' + token
+        });
+        let options = new RequestOptions({headers: headers});
+        return this.http.get('http://localhost:2209****/api/Activites/GetActivitesById/'+id.toString(), options).toPromise()
+            .then(response =>{
+                console.log(response.json());
+                activite = response.json();
+                return activite;
+            });
+    }
+
+    
 
 /*    getActivites():List<Activite>{
 
@@ -27,5 +96,18 @@ export class ActiviteService{
 
     deleteActivite(id:number):void{
         this.http.delete('http://localhost:11601/api/Activites/'+id.toString());
+    }*/
+
+    /*call(): void {
+        let token = localStorage.getItem('Token');
+        let headers = new Headers({
+            'Content-Type': 'application/json',
+            'Authorization' : 'Bearer ' + token
+        });
+        let options = new RequestOptions({headers: headers});
+        this.http.get('http://localhost:2209/api/Memos', options).toPromise()
+            .then(response => {
+                console.log(response.json());
+            });
     }*/
 }
