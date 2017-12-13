@@ -16,12 +16,6 @@ namespace WebApiVoyage.Models
 
         public int NbJours { get; set; }
         [Required]
-        [DataType(DataType.DateTime)]
-        public DateTime DateDepart { get; set; }
-        [Required]
-        [DataType(DataType.DateTime)]
-        public DateTime DateRetour { get; set; }
-        [Required]
         public double Budget { get; set; }
 
         public double BudgetRestant { get; set; }
