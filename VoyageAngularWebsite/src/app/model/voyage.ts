@@ -1,5 +1,6 @@
 export class Voyage{
-    id: string;
-    titre: string;
-    desc: string;
+    VoyageId: string;
+    TitreVoyage: string;
+    Budget: number;
+    NbJours:number =0;
 }

@@ -53,8 +53,7 @@ namespace WebApiVoyage.Models
             voy1.TitreVoyage = "Voyage des Pédestres";
             voy1.Budget = 5200.00;
             voy1.BudgetRestant = 2600.00;
-            voy1.DateDepart = DateTime.Now;
-            voy1.DateRetour = DateTime.Now.AddDays(14);
+           
             voy1.ListeVoyageur = new List<ApplicationUser>
             {
                 user,
