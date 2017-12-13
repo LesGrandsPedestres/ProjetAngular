@@ -18,23 +18,23 @@ namespace WebApiVoyage.Controllers
 
         // GET: api/Activites
         [Route("api/Activites/GetActivitesByVoyageId/{VoyageId}")]
-        public List<Activite> GetActivites(int VoyageId)
+        public List<ActiviteDTO> GetActivites(int VoyageId)
         {
-            return db.Activites.Where(x => x.Transport.VoyageId == VoyageId).ToList();
+            return Activite.toDTOList(db.Activites.Where(x => x.Transport.VoyageId == VoyageId).ToList());
         }
 
         // GET: api/Activites/5
         [ResponseType(typeof(Activite))]
         [Route("api/Activites/GetActiviteById/{id}")]
-        public IHttpActionResult GetActivite(int id)
+        public Activite GetActivite(int id)
         {
             Activite activite = db.Activites.Find(id);
             if (activite == null)
             {
-                return NotFound();
+                throw new ArgumentNullException();
             }
 
-            return Ok(activite);
+            return activite;
         }
 
         // PUT: api/Activites/5
