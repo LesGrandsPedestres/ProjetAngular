@@ -17,12 +17,12 @@ export class TransportService{
             'Content-Type': 'application/json',
             'Authorization' : 'Bearer ' + token
         });
-        let options = new RequestOptions({headers: headers});
+/*        let options = new RequestOptions({headers: headers});
         this.http.get('http://localhost:1769/api/GetTransportsForVoyage/' + voyageId, options).toPromise()
             .then(response => {
                 let transport : Transport = response.json();
                 this.transport = transport;
-            });
+            });*/
 
 
         this.transports = [];
@@ -33,8 +33,6 @@ export class TransportService{
                 Origine: "Cégep Montpetit",
                 Arrivee: "Masson Montréal",
             },
-            DateDepart: new Date(),
-            DateArrivee: new Date(),
             Cout: 10.00,
             VoyageId: 1
         });
@@ -46,8 +44,6 @@ export class TransportService{
                 Origine: "Cégep Montpetit",
                 Arrivee: "Stade Olympique",
             },
-            DateDepart: new Date(),
-            DateArrivee: new Date(),
             Cout: 20.00,
             VoyageId: 1
         });
