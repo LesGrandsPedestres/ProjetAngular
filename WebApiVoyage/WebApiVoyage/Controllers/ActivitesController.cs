@@ -17,34 +17,37 @@ namespace WebApiVoyage.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/Activites
-        public IQueryable<Activite> GetActivites()
+        [Route("api/Activites/GetActivitesByVoyageId/{VoyageId}")]
+        public List<ActiviteDTO> GetActivites(int VoyageId)
         {
-            return db.Activites;
+            return Activite.toDTOList(db.Activites.Where(x => x.Transport.VoyageId == VoyageId).ToList());
         }
 
         // GET: api/Activites/5
-        [ResponseType(typeof(Activite))]
-        public IHttpActionResult GetActivite(int id)
+        [ResponseType(typeof(ActiviteDTO))]
+        [Route("api/Activites/GetActiviteById/{id}")]
+        public ActiviteDTO GetActivite(int id)
         {
             Activite activite = db.Activites.Find(id);
             if (activite == null)
             {
-                return NotFound();
+                throw new ArgumentNullException();
             }
 
-            return Ok(activite);
+            return activite.toDTO();
         }
 
         // PUT: api/Activites/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutActivite(int id, Activite activite)
+        [Route("api/Activites/ModifyActivite/{ActivityId}")]
+        public IHttpActionResult PutActivite(int ActivityId, Activite activite)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != activite.ActiviteId)
+            if (ActivityId != activite.ActiviteId)
             {
                 return BadRequest();
             }
@@ -57,7 +60,7 @@ namespace WebApiVoyage.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ActiviteExists(id))
+                if (!ActiviteExists(ActivityId))
                 {
                     return NotFound();
                 }
@@ -71,8 +74,9 @@ namespace WebApiVoyage.Controllers
         }
 
         // POST: api/Activites
-        [ResponseType(typeof(Activite))]
-        public IHttpActionResult PostActivite(Activite activite)
+        [ResponseType(typeof(ActiviteDTO))]
+        [Route("api/Activites/CreateActivity/{JourId}")]
+        public IHttpActionResult PostActivite(int JourId,Activite activite)
         {
             if (!ModelState.IsValid)
             {
@@ -82,11 +86,12 @@ namespace WebApiVoyage.Controllers
             db.Activites.Add(activite);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = activite.ActiviteId }, activite);
+            return CreatedAtRoute("DefaultApi", new { id = activite.ActiviteId }, activite.toDTO());
         }
 
         // DELETE: api/Activites/5
-        [ResponseType(typeof(Activite))]
+        [ResponseType(typeof(ActiviteDTO))]
+        [Route("api/Activites/DeleteActivity/{id}")]
         public IHttpActionResult DeleteActivite(int id)
         {
             Activite activite = db.Activites.Find(id);
@@ -98,7 +103,7 @@ namespace WebApiVoyage.Controllers
             db.Activites.Remove(activite);
             db.SaveChanges();
 
-            return Ok(activite);
+            return Ok(activite.toDTO());
         }
 
         protected override void Dispose(bool disposing)
