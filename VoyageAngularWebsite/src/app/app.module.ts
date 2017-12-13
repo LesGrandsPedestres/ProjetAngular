@@ -26,15 +26,16 @@ import {MarkerDirective} from "./maps/marker.directive";
 import {SuggestionComponent} from "./suggestion/suggestion.component";
 import {DirectionsDirective} from "./maps/directions.directive";
 import {GeocodeService} from "./maps/geocode.service";
+import {MapsService} from "./maps/maps.service";
 
 @NgModule({
     imports:      [
         BrowserModule,
         FormsModule,
         HttpModule,
-        AgmCoreModule.forRoot({
+        /*AgmCoreModule.forRoot({
             apiKey: 'AIzaSyB2EuOW-iYY7uNt5uA0RMKG57UJUIc4rRs'
-        }),
+        }),*/
         RouterModule.forRoot([
             { path: '', redirectTo: '/home', pathMatch: 'full' },
             { path: 'home', component: VoyageComponent },
@@ -50,13 +51,13 @@ import {GeocodeService} from "./maps/geocode.service";
         UserComponent,
         VoyageComponent,
         LogoutComponent,
-        SpiComponent, 
-        GeocodeComponent, 
-        DirectionsComponent, 
-        MapsComponent, 
-        LocalisationComponent, 
-        MarkerDirective, 
-        SuggestionComponent, 
+        SpiComponent,
+        GeocodeComponent,
+        DirectionsComponent,
+        MapsComponent,
+        LocalisationComponent,
+        MarkerDirective,
+        SuggestionComponent,
         DirectionsDirective
     ],
     providers:    [
@@ -65,7 +66,8 @@ import {GeocodeService} from "./maps/geocode.service";
         TransportService,
         UserService,
         VoyageService,
-        GeocodeService
+        GeocodeService,
+        MapsService
     ],
     bootstrap:    [ FormComponent ]
 })

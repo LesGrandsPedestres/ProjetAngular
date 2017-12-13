@@ -23,4 +23,9 @@ export class MapsComponent implements AfterViewInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     this.mapsService.location(this.emplacement, this.zoom).createMap(this.elementRef.nativeElement.firstElementChild);
   }
+
+  refresh(): void {
+    //google.maps.event.trigger(this.mapsService.map, 'resize');
+    this.mapsService.updateMap();
+  }
 }

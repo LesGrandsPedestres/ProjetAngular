@@ -39,7 +39,7 @@ export class TransportService{
 
         this.transports.push({
             TransportId: 2,
-            TypeTransport: ModeTransport.Bus,
+            TypeTransport: ModeTransport.Automobile,
             Destination: {
                 Origine: "Cégep Montpetit",
                 Arrivee: "Stade Olympique",
