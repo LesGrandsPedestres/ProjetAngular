@@ -1,7 +1,7 @@
 import {Component, OnInit, ElementRef, AfterViewInit} from '@angular/core';
 import {VoyageService} from "./voyage.service";
 import {Voyage} from "./model/voyage";
-declare var jQuery:any;
+declare var jQuery: any;
 
 @Component({
   selector: 'voyage',
@@ -11,18 +11,17 @@ export class VoyageComponent implements OnInit, AfterViewInit {
     voyages: Voyage[];
 
     ngAfterViewInit():void {
-        jQuery(this.elementRef.nativeElement).find('#accordion' + this.voyages[0].titre).accordion({collapsible: true, active: false});
-        jQuery(this.elementRef.nativeElement).find('#accordion' + this.voyages[1].titre).accordion({collapsible: true, active: false});
-        jQuery(this.elementRef.nativeElement).find('#accordion' + this.voyages[2].titre).accordion({collapsible: true, active: false});
-        jQuery(this.elementRef.nativeElement).find('#accordion' + this.voyages[3].titre).accordion({collapsible: true, active: false});
+        for(var i = 0; i <= this.voyages.length; i++){
+            jQuery(this.elementRef.nativeElement).find('#accordion' + this.voyages[i].id).accordion({collapsible: true, active: false});
+        }
     }
 
     ngOnInit():void {
         this.voyages = [
-            {titre: "Pérou", desc: "Idk"},
-            {titre: "Italie", desc: "Idk2"},
-            {titre: "Penis", desc: "Idk3"},
-            {titre: "Pussytown", desc: "Idk4"},
+            {id: "1", titre: "Pérou", desc: "Idk"},
+            {id: "2", titre: "Italie", desc: "Idk2"},
+            {id: "3", titre: "Penis", desc: "Idk3"},
+            {id: "4", titre: "Pussytown", desc: "Idk4"}
         ];
     }
 
