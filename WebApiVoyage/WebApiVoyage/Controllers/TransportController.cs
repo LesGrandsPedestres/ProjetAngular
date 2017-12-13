@@ -22,27 +22,21 @@ namespace WebApiVoyage.Controllers
         // GET: api/GetTransportsForVoyage/5
         [Route("api/GetTransportsForVoyage/{id}")]
         [HttpGet]
-        public TransportDTO GetTransportsForVoyage(int voyageId)
+        public List<TransportDTO> GetTransportsForVoyage(int voyageId)
         {
             Voyage voyage = db.Voyages.Find(voyageId);
             if(voyage == null)
             {
                 throw new HttpResponseException(HttpStatusCode.NotFound);
             }
-            return voyage.Transport.toDTO();
-        }
 
-        // GET: api/GetTransportsForVoyage/5
-        [Route("api/GetTransportsForActivite/{id}")]
-        [HttpGet]
-        public TransportDTO GetTransportsForActivite(int activiteId)
-        {
-            Activite activite = db.Activites.Find(activiteId);
-            if (activite == null)
+            List<Transport> transports = voyage.Transport;
+            List<TransportDTO> transportsDTO = new List<TransportDTO>();
+            foreach (Transport trans in transports)
             {
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+                transportsDTO.Add(trans.toDTO());
             }
-            return activite.Transport.toDTO();
+            return transportsDTO;
         }
 
 
