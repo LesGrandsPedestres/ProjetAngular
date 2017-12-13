@@ -9,6 +9,7 @@ export class Transport{
 }
 
 export enum ModeTransport{
+    Nothing,
     Bus,
     Marche,
     Velo,

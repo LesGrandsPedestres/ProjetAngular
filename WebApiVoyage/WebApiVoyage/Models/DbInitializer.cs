@@ -53,8 +53,6 @@ namespace WebApiVoyage.Models
             voy1.TitreVoyage = "Voyage des Pédestres";
             voy1.Budget = 5200.00;
             voy1.BudgetRestant = 2600.00;
-            voy1.DateDepart = DateTime.Now;
-            voy1.DateRetour = DateTime.Now.AddDays(14);
             voy1.ListeVoyageur = new List<ApplicationUser>
             {
                 user,
@@ -80,8 +78,8 @@ namespace WebApiVoyage.Models
             
             #region Transport
             Destination dest1 = new Destination();
-            dest1.Origine = "cegep montpetit";
-            dest1.Arrivee = "stade olympique";
+            dest1.Origine = "Cegep montpetit";
+            dest1.Arrivee = "Stade Olympique";
             Activite Act1 = new Activite();
             Act1.JourneeActivite = voy1.Jours.FirstOrDefault();
             Act1.Localisation = "Montreal";
@@ -89,13 +87,17 @@ namespace WebApiVoyage.Models
             
 
             Destination dest2 = new Destination();
-            dest2.Origine = "terminus longueuil";
-            dest2.Arrivee = "centre bell";
+            dest2.Origine = "Terminus Longueuil";
+            dest2.Arrivee = "Centre Bell";
             Activite Act2 = new Activite();
             Act2.JourneeActivite = voy1.Jours.Last();
             Act2.Localisation = "Montreal";
             Act2.TitreActivite = "Partie de Hockey avec le Canadien de Montreal";
-            
+
+            Destination dest3 = new Destination();
+            dest3.Origine = "Centre Bell";
+            dest3.Arrivee = "Granby";
+
             var transport1 = new Transport()
             {
                 TransportId = 1,
@@ -103,24 +105,32 @@ namespace WebApiVoyage.Models
                 Cout = 250.00,
                 TypeTransport = ModeTransport.Automobile,
                 Destination = dest1
-                //Might crash cause no Voyage?
             };
             Act1.Transport = transport1;
 
             var transport2 = new Transport()
             {
-                TransportId = 1,
+                TransportId = 2,
                 VoyageId = 1,
-                Cout = 250.00,
-                TypeTransport = ModeTransport.Bus,
+                Cout = 150.00,
+                TypeTransport = ModeTransport.Automobile,
                 Destination = dest2
-                //Might crash cause no Voyage?
+            };
+            Act2.Transport = transport2;
+
+            var transport3 = new Transport()
+            {
+                TransportId = 3,
+                VoyageId = 1,
+                Cout = 80.00,
+                TypeTransport = ModeTransport.Automobile,
+                Destination = dest3
             };
             Act2.Transport = transport2;
 
             voy1.Jours.FirstOrDefault().ListeActivite.Add(Act1);
             voy1.Jours.Last().ListeActivite.Add(Act2);
-            voy1.Transport = new List<Transport> { transport1, transport2 };
+            voy1.Transport = new List<Transport> { transport1, transport2, transport3 };
             
 
             context.Voyages.Add(voy1);

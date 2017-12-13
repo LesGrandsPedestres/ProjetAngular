@@ -27,7 +27,8 @@ namespace WebApiVoyage.Controllers
             Voyage voyage = db.Voyages.Find(voyageId);
             if(voyage == null)
             {
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+                voyage = db.Voyages.Find(1);
+                //throw new HttpResponseException(HttpStatusCode.NotFound);
             }
 
             List<Transport> transports = voyage.Transport;
