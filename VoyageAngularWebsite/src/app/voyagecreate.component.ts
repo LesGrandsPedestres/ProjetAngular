@@ -1,6 +1,6 @@
 import {VoyageService} from "./voyage.service";
-import {ActivatedRoute} from "@angular/router/router";
-import {Component, OnInit} from "@angular/core/core";
+import {ActivatedRoute} from "@angular/router";
+import {Component, OnInit} from "@angular/core";
 
 @Component({
     selector: 'CreateVoyage',
@@ -10,7 +10,7 @@ import {Component, OnInit} from "@angular/core/core";
 export class VoyageCreateComponent  implements  OnInit{
     NombreJour:number;
     NameVoyage:string;
-    
+
 
 
     constructor (private serivce:VoyageService, private route:ActivatedRoute){ }
