@@ -29,7 +29,8 @@ namespace WebApiVoyage.Controllers
             if(voyage == null)
             {
                 //voyage = db.Voyages.Find(1); //Use this line to Debug if only 1 voyage
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+                return null;
+                //throw new HttpResponseException(HttpStatusCode.NotFound);
             }
 
             List<Transport> transports = voyage.Transport;

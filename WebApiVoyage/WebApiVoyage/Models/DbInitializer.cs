@@ -50,7 +50,7 @@ namespace WebApiVoyage.Models
 
             #region Voyage
             Voyage voy1 = new Voyage();
-            voy1.TitreVoyage = "Voyage des Pédestres";
+            voy1.TitreVoyage = "Voyage des Pédestres à Montréal";
             voy1.Budget = 5200.00;
             voy1.BudgetRestant = 2600.00;
 
@@ -64,7 +64,7 @@ namespace WebApiVoyage.Models
             voy1.Jours = new List<Jour> { };
 
             Voyage voy2 = new Voyage();
-            voy2.TitreVoyage = "Épopée au Centre Bell";
+            voy2.TitreVoyage = "Tour de l'Europe";
             voy2.Budget = 4000.00;
             voy2.BudgetRestant = 1000.00;
 
@@ -74,7 +74,7 @@ namespace WebApiVoyage.Models
                 user2
             };
             voy2.NbJours = 14;
-            voy2.VoyageId = 1;
+            voy2.VoyageId = 2;
             voy2.Jours = new List<Jour> { };
 
             Voyage voy3 = new Voyage();
@@ -88,22 +88,12 @@ namespace WebApiVoyage.Models
                 user2
             };
             voy3.NbJours = 14;
-            voy3.VoyageId = 1;
+            voy3.VoyageId = 3;
             voy3.Jours = new List<Jour> { };
 
-            Voyage voy4 = new Voyage();
-            voy4.TitreVoyage = "Tour de l'Europe";
-            voy4.Budget = 2000.00;
-            voy4.BudgetRestant = 500.00;
-
-            voy4.ListeVoyageur = new List<ApplicationUser>
-            {
-                user,
-                user2
-            };
-            voy4.NbJours = 14;
-            voy4.VoyageId = 1;
-            voy4.Jours = new List<Jour> { };
+            context.Voyages.Add(voy1);
+            context.Voyages.Add(voy2);
+            context.Voyages.Add(voy3);
 
             #endregion
             #region Jours
@@ -173,9 +163,91 @@ namespace WebApiVoyage.Models
             voy1.Jours.FirstOrDefault().ListeActivite.Add(Act1);
             voy1.Jours.Last().ListeActivite.Add(Act2);
             voy1.Transport = new List<Transport> { transport1, transport2, transport3 };
-            
 
-            context.Voyages.Add(voy1);
+            Destination dest4 = new Destination();
+            dest4.Origine = "France";
+            dest4.Arrivee = "Allemagne";
+
+
+
+            Destination dest5 = new Destination();
+            dest5.Origine = "Allemagne";
+            dest5.Arrivee = "Italie";
+
+            Destination dest6 = new Destination();
+            dest6.Origine = "Italie";
+            dest6.Arrivee = "Espagne";
+
+            var transport4 = new Transport()
+            {
+                TransportId = 4,
+                VoyageId = 2,
+                Cout = 150.00,
+                TypeTransport = ModeTransport.Automobile,
+                Destination = dest4
+            };
+
+            var transport5 = new Transport()
+            {
+                TransportId = 5,
+                VoyageId = 2,
+                Cout = 150.00,
+                TypeTransport = ModeTransport.Automobile,
+                Destination = dest5
+            };
+
+            var transport6 = new Transport()
+            {
+                TransportId = 6,
+                VoyageId = 2,
+                Cout = 150.00,
+                TypeTransport = ModeTransport.Automobile,
+                Destination = dest6
+            };
+
+            Destination dest7 = new Destination();
+            dest7.Origine = "Thèbes, Egypte";
+            dest7.Arrivee = "Charm el-Cheikh, Egypte";
+
+
+
+            Destination dest8 = new Destination();
+            dest8.Origine = "Charm el-Cheikh, Egypte";
+            dest8.Arrivee = "Louxor, Egypte";
+
+            Destination dest9 = new Destination();
+            dest9.Origine = "Louxor, Egypte";
+            dest9.Arrivee = "Gizeh, Egypte";
+
+            var transport7 = new Transport()
+            {
+                TransportId = 7,
+                VoyageId = 3,
+                Cout = 75.00,
+                TypeTransport = ModeTransport.Automobile,
+                Destination = dest7
+            };
+
+            var transport8 = new Transport()
+            {
+                TransportId = 8,
+                VoyageId = 3,
+                Cout = 150.00,
+                TypeTransport = ModeTransport.Automobile,
+                Destination = dest8
+            };
+
+            var transport9 = new Transport()
+            {
+                TransportId = 9,
+                VoyageId = 3,
+                Cout = 150.00,
+                TypeTransport = ModeTransport.Automobile,
+                Destination = dest9
+            };
+
+            voy2.Transport = new List<Transport> { transport4, transport5, transport6 };
+            voy3.Transport = new List<Transport> { transport7, transport8, transport9 };
             #endregion
 
             base.Seed(context);
