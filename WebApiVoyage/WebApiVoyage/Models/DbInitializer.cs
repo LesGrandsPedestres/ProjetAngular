@@ -110,14 +110,14 @@ namespace WebApiVoyage.Models
             for (int i = 0; i < 14; i++)
             {
                 Jour a = new Jour();
-                a.BudgetJour= 186.70;
+                a.BudgetJour = 186.70;
                 a.JourId = i;
                 a.NumeroJour = 1 + i;
                 a.ListeActivite = new List<Activite> { };
                 voy1.Jours.Add(a);
             }
             #endregion
-            
+
             #region Transport
             Destination dest1 = new Destination();
             dest1.Origine = "Cegep montpetit";
@@ -125,8 +125,8 @@ namespace WebApiVoyage.Models
             Activite Act1 = new Activite();
             Act1.JourneeActivite = voy1.Jours.FirstOrDefault();
             Act1.Localisation = "Montreal";
-            Act1.TitreActivite= "Visite Stade Olympique";
-            
+            Act1.TitreActivite = "Visite Stade Olympique";
+
 
             Destination dest2 = new Destination();
             dest2.Origine = "Terminus Longueuil";
@@ -173,7 +173,7 @@ namespace WebApiVoyage.Models
             voy1.Jours.FirstOrDefault().ListeActivite.Add(Act1);
             voy1.Jours.Last().ListeActivite.Add(Act2);
             voy1.Transport = new List<Transport> { transport1, transport2, transport3 };
-            
+
 
             context.Voyages.Add(voy1);
             #endregion

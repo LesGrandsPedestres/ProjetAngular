@@ -3,7 +3,7 @@
 <div class="col-md-4 jumbotron">
 
 
-    <div *ngFor="let c of listJours">
+    <div *ngFor="let c of serivce.listJour">
         <h3>Journée {{c.NumeroJour}}</h3><br />
         <p> Le buget pour cette journée: {{c.BudgetJour}}</p><br />
         <a href="jours/{{voyageId}}/{{c.JourId}}" class="btn btn-info" role="button"> Voir les activités de la journée</a>

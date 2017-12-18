@@ -8,24 +8,8 @@ import {Jour} from "./Jour";
 export class ActiviteService{
 
     public listActivite:Activite[];
-    public listJour:Jour[];
 
     constructor(private http: Http) { }
-
-
-    getJours(id:string):void{
-        let token = localStorage.getItem('Token');
-        let headers = new Headers({
-            'Content-Type': 'application/json',
-            'Authorization' : 'Bearer ' + token
-        });
-        let options = new RequestOptions({headers: headers});
-        this.http.get('http://localhost:2209***/api/Jours/GetJours'+id,options).toPromise()
-            .then(response => {
-                console.log(response.json());
-                this.listJour = response.json();
-            });
-    }
 
     getJourById(id:string):Promise<Jour>{
         let Jour:Jour;
@@ -50,7 +34,7 @@ export class ActiviteService{
             'Authorization' : 'Bearer ' + token
         });
         let options = new RequestOptions({headers: headers});
-        this.http.get('http://localhost:2209***/api/Activites/GetActivites'+id,options).toPromise()
+        this.http.get('http://localhost:1769/api/Activites/GetActivites'+id,options).toPromise()
             .then(response => {
                 console.log(response.json());
                 this.listActivite = response.json();

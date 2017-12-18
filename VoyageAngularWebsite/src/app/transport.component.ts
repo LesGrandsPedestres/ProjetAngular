@@ -35,8 +35,8 @@ export class TransportComponent implements OnInit{
 
   ngOnInit() : void{
     this.transport.Destination = new Destination();
-    this.transport = {TransportId: 1, TypeTransport: ModeTransport.Automobile, Destination: new Destination(), Cout: 200, VoyageId: 1};
- //   this.transportService.getAllVoyageTransports(this.voyageId).then(response => this.setUpTransport(response));
+   // this.transport = {TransportId: 1, TypeTransport: ModeTransport.Automobile, Destination: new Destination(), Cout: 200, VoyageId: 1};
+    this.transportService.getAllVoyageTransports(this.voyageId).then(response => this.setUpTransport(response));
   }
 
   setUpTransport(transports: Transport[]){
