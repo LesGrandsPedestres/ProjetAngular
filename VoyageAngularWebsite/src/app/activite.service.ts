@@ -34,7 +34,7 @@ export class ActiviteService{
             'Authorization' : 'Bearer ' + token
         });
         let options = new RequestOptions({headers: headers});
-        this.http.get('http://localhost:1769/api/Activites/GetActivites'+id,options).toPromise()
+        this.http.get('http://localhost:1769/api/Activites/GetActivitesByVoyageId/'+id,options).toPromise()
             .then(response => {
                 console.log(response.json());
                 this.listActivite = response.json();

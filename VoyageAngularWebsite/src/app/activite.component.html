@@ -1,7 +1,6 @@
-<h4 style="text-align:center "> Liste des activitées pour la journée</h4>
-        <div *ngFor="let a of listActivite">
-            <h5 style="text-align: center"> {{a.TitreActivite}}</h5>
-            <agm-map [latitude]=getlat(c) [longitude]=getlong(c) [zoom]="15">
-                <agm-marker [latitude]=getlat(c) [longitude]=getlong(c)></agm-marker>
-            </agm-map>
+<h3 style="text-align:center "> Liste des activitées pour la journée</h3>
+        <div *ngFor="let a of serivce.listActivite">
+            <h4 style="text-align: center"> {{a.TitreActivite}}</h4>
+            <p style="text-align: center"> Cette activité se trouve à {{a.Localisation}}</p>
+            <p style="text-align: center">Le coût de cette activité: {{a.Cout}}$</p><br/>
         </div>

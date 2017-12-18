@@ -18,7 +18,7 @@ export class ActiviteComponent  implements  OnInit{
         this.route.paramMap.subscribe(params => {
             this.voyageId = params.get('voyageId');
             this.JoursId = params.get('jourId');
-            //this.serivce.getActivites(this.voyageId);
+            this.serivce.getActivites(this.voyageId);
         })
     }
   
