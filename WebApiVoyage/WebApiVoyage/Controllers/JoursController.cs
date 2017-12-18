@@ -105,6 +105,36 @@ namespace WebApiVoyage.Controllers
 
             return Ok(jour.toDTO());
         }
+        [ResponseType(typeof(void))]
+        [Route("api/Jours/gestionBudgetPlus/{id}")]
+        public IHttpActionResult gestionBudgetPlus(int id)
+        {
+            Jour jour = db.Jours.Find(id);
+            if (jour == null)
+            {
+                return NotFound();
+            }
+            jour.BudgetJour++;
+            db.Entry(jour).State = EntityState.Modified;
+            db.SaveChanges();
+            return Ok();
+        }
+        [ResponseType(typeof(void))]
+        [Route("api/Jours/gestionBudgetMoins/{id}")]
+        public IHttpActionResult gestionBudgetMoins(int id)
+        {
+            Jour jour = db.Jours.Find(id);
+            if (jour == null)
+            {
+                return NotFound();
+            }
+            jour.BudgetJour--;
+            db.Entry(jour).State = EntityState.Modified;
+            db.SaveChanges();
+            return Ok();
+        }
+
+
 
         protected override void Dispose(bool disposing)
         {
