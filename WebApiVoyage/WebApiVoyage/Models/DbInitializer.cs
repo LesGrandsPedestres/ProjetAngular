@@ -63,7 +63,48 @@ namespace WebApiVoyage.Models
             voy1.VoyageId = 1;
             voy1.Jours = new List<Jour> { };
 
-            
+            Voyage voy2 = new Voyage();
+            voy2.TitreVoyage = "Voyage des Pédestres";
+            voy2.Budget = 4000.00;
+            voy2.BudgetRestant = 1000.00;
+
+            voy2.ListeVoyageur = new List<ApplicationUser>
+            {
+                user,
+                user2
+            };
+            voy2.NbJours = 14;
+            voy2.VoyageId = 1;
+            voy2.Jours = new List<Jour> { };
+
+            Voyage voy3 = new Voyage();
+            voy3.TitreVoyage = "Voyage des Pédestres";
+            voy3.Budget = 3500.00;
+            voy3.BudgetRestant = 1500.00;
+
+            voy3.ListeVoyageur = new List<ApplicationUser>
+            {
+                user,
+                user2
+            };
+            voy3.NbJours = 14;
+            voy3.VoyageId = 1;
+            voy3.Jours = new List<Jour> { };
+
+            Voyage voy4 = new Voyage();
+            voy4.TitreVoyage = "Voyage des Pédestres";
+            voy4.Budget = 2000.00;
+            voy4.BudgetRestant = 500.00;
+
+            voy4.ListeVoyageur = new List<ApplicationUser>
+            {
+                user,
+                user2
+            };
+            voy4.NbJours = 14;
+            voy4.VoyageId = 1;
+            voy4.Jours = new List<Jour> { };
+
             #endregion
             #region Jours
             for (int i = 0; i < 14; i++)

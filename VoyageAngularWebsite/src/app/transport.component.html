@@ -3,8 +3,8 @@
         <h2 style="text-align:center;margin-bottom:0px;">Destinations</h2>
     </div>
     <div class="col-md-12">
-        <div class="col-md-12"><h3>Transport : {{getModeTransport(transport.TypeTransport)}}</h3></div>
-
+        <div class="col-md-8"><h3>Transport : {{getModeTransport(transport.TypeTransport)}}</h3></div>
+        <div class="col-md-4"><h3>Prix : {{transport.Cout}}</h3></div>
 <!--
         <agm-map [latitude]="transport.Destination.LatitudeDepart" [longitude]="transport.Destination.LongitudeDepart" [zoom]="7">
             <agm-marker [latitude]="transport.Destination.LatitudeDepart" [longitude]="transport.Destination.LongitudeDepart"></agm-marker>

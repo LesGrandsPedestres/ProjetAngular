@@ -27,17 +27,6 @@ export class TransportComponent implements OnInit{
   transport: Transport = new Transport();
   waypoints: Waypoint[] = [];
 
-/*  waypoints: Waypoint[] = [{
-    location: 'Stade olympique',
-    stopover: true
-  }, {
-    location: '822 Rue Saint-Laurent Ouest, Longueuil, QC J4K 1C3',
-    stopover: true
-  }, {
-    location: 'Granby',
-    stopover: true
-  }];*/
-
   constructor(private transportService: TransportService) { }
 
   public updateMap(): void {
@@ -46,7 +35,8 @@ export class TransportComponent implements OnInit{
 
   ngOnInit() : void{
     this.transport.Destination = new Destination();
-    this.transportService.getAllVoyageTransports(this.voyageId).then(response => this.setUpTransport(response));
+    this.transport = {TransportId: 1, TypeTransport: ModeTransport.Automobile, Destination: new Destination(), Cout: 200, VoyageId: 1};
+ //   this.transportService.getAllVoyageTransports(this.voyageId).then(response => this.setUpTransport(response));
   }
 
   setUpTransport(transports: Transport[]){
