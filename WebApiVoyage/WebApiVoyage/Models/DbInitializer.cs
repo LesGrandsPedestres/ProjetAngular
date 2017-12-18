@@ -117,7 +117,7 @@ namespace WebApiVoyage.Models
             Act1.Localisation = "Montreal";
             Act1.TitreActivite = "Visite Stade Olympique";
 
-
+            Act1.Cout = 50;
             Destination dest2 = new Destination();
             dest2.Origine = "Terminus Longueuil";
             dest2.Arrivee = "Centre Bell";
@@ -125,7 +125,7 @@ namespace WebApiVoyage.Models
             Act2.JourneeActivite = voy1.Jours.Last();
             Act2.Localisation = "Montreal";
             Act2.TitreActivite = "Partie de Hockey avec le Canadien de Montreal";
-
+            Act2.Cout = 47;
             Destination dest3 = new Destination();
             dest3.Origine = "Centre Bell";
             dest3.Arrivee = "Granby";
