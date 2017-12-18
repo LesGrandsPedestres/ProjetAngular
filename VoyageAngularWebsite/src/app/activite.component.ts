@@ -8,12 +8,9 @@ import {Jour, JOURS} from "./Jour";
   selector: 'activite',
   templateUrl: './activite.component.html',
 })
-// Activité et Jour component
 export class ActiviteComponent  implements  OnInit{
-    Jours:Jour[] = JOURS
-    @Input() voyageId: string; // Pour prendre toute les jours de se voyages
-    @Input() JoursId:string;
-    //JoursIdSelected:string; //Pour prendre toute les activitées de cette journée afin de pouvoir mettre ne place un horaire
+    voyageId: string; 
+    JoursId:string;
 
     constructor (private serivce:ActiviteService, private route:ActivatedRoute){ }
 

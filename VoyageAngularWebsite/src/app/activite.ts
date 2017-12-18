@@ -6,3 +6,9 @@ export class Activite{
     Cout:number;
     JourId:number;
 }
+
+export const ACTIVITES:Activite[] = [
+    {},
+    {},
+    {},
+]
