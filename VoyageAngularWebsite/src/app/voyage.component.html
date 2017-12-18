@@ -2,8 +2,9 @@
     <div class="row">
         <h2>Les Voyages</h2>
         <div *ngFor="let v of voyages;" id="{{v.id}}">
-            <h3>{{v.titre}}</h3>
-            <transport [voyageId]="v.id"></transport>
+            <h3>{{v.TitreVoyage}}</h3>
+            <transport [voyageId]="v.VoyageId"></transport>
+            <br />
             <a href="/jours/{{v.id}}" class="btn btn-info" role="button">Voir l'horaire du voyage</a>
         </div>
     </div>
