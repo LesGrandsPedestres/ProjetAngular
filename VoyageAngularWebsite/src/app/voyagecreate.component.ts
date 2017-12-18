@@ -49,7 +49,7 @@ export class VoyageCreateComponent  implements  OnInit{
             if(y){
                 this.router.navigateByUrl("/home")
             }
-            else{ this.NombreJour= "";
+            else{ this.NombreJour= 0;
                 this.budget = 0;
                 this.NameVoyage = "Échec"
             }
