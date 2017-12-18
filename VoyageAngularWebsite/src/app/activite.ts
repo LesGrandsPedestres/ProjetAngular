@@ -8,7 +8,5 @@ export class Activite{
 }
 
 export const ACTIVITES:Activite[] = [
-    {},
-    {},
-    {},
+   
 ]
