@@ -1,21 +1,7 @@
-<h2 style="text-align:center"> Liste des Jours</h2>
-<div class="col-md-4"></div>
-<div class="col-md-4 jumbotron">
-
-
-    <div *ngFor="let c of listJours">
-        <h3>Journée {{c.NumeroJour}}</h3><br />
-        <p> Le buget pour cette journée: {{c.BudgetJour}}</p><br />
-
-
-
-        <h4 style="text-align:center "> Liste des activitées pour la journée</h4>
+<h4 style="text-align:center "> Liste des activitées pour la journée</h4>
         <div *ngFor="let a of listActivite">
             <h5 style="text-align: center"> {{a.TitreActivite}}</h5>
             <agm-map [latitude]=getlat(c) [longitude]=getlong(c) [zoom]="15">
                 <agm-marker [latitude]=getlat(c) [longitude]=getlong(c)></agm-marker>
             </agm-map>
         </div>
-    </div>
-
-</div>

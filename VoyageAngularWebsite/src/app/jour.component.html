@@ -1,0 +1,12 @@
+<h2 style="text-align:center"> Liste des Jours</h2>
+<div class="col-md-4"></div>
+<div class="col-md-4 jumbotron">
+
+
+    <div *ngFor="let c of listJours">
+        <h3>Journée {{c.NumeroJour}}</h3><br />
+        <p> Le buget pour cette journée: {{c.BudgetJour}}</p><br />
+        <a href="jours/{{voyageId}}/{{c.JourId}}" class="btn btn-info" role="button"> Voir les activités de la journée</a>
+    </div>
+
+</div>
