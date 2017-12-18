@@ -22,6 +22,31 @@ export class JourService{
                 this.listJour = response.json();
             });
     }
+    public moins(id:number) : void{
+        let token = localStorage.getItem('token');
+        let headers = new Headers({
+            'Authorization' : 'Bearer ' + token
+        });
+        let options = new RequestOptions({headers: headers});
+          this.http.get('http://localhost:1769/api/Jours/gestionBudgetMoins/'+id, options).toPromise()
+            .then(response => {
+
+            });
+    }
+
+//plus 1
+    public plus(id:number) : void{
+        let token = localStorage.getItem('token');
+        let headers = new Headers({
+            'Authorization' : 'Bearer ' + token
+        });
+        let options = new RequestOptions({headers: headers});
+        this.http.get('http://localhost:1769/api/Jours/gestionBudgetPlus/'+id, options).toPromise().then(response =>{
+
+
+    });
+        
+    }
 
 
 

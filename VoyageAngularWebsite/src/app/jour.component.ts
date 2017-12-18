@@ -19,5 +19,14 @@ export class JourComponent implements  OnInit{
       this.serivce.getJours(this.voyageId);
     })
   }
+  onPlus(id:number){
+    console.log(id);
+    this.serivce.plus(id);
+    this.serivce.getJours(this.voyageId)
+  }
+  onMoins(id:number){
+    this.serivce.moins(id);
+    this.serivce.getJours(this.voyageId)
+  }
 
 }

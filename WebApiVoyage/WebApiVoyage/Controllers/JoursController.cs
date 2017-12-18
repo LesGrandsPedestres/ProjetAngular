@@ -12,6 +12,7 @@ using WebApiVoyage.Models;
 
 namespace WebApiVoyage.Controllers
 {
+    
     public class JoursController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -116,7 +117,23 @@ namespace WebApiVoyage.Controllers
             }
             jour.BudgetJour++;
             db.Entry(jour).State = EntityState.Modified;
-            db.SaveChanges();
+
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!JourExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            
             return Ok();
         }
         [ResponseType(typeof(void))]
@@ -130,7 +147,21 @@ namespace WebApiVoyage.Controllers
             }
             jour.BudgetJour--;
             db.Entry(jour).State = EntityState.Modified;
-            db.SaveChanges();
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!JourExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
             return Ok();
         }
 
