@@ -6,13 +6,21 @@ import {Voyage} from "./model/voyage";
 export class VoyageService{
     constructor(private http: Http) {}
 
+    public getMesVoyages(): Promise<Voyage[]> {
+        let token = localStorage.getItem('token');
+        let headers = new Headers({
+            'Content-Type': 'application/json',
+            'Authorization' : 'Bearer ' + token
+        });
+        let options = new RequestOptions({headers: headers});
+        return this.http.get('http://localhost:1769/api/Voyages/MesVoyages', options).toPromise()
+            .then(response => {
+                console.log(response.json());
+                return response.json() as Voyage[];
+            });
+    }
 
-
-
-
-
-    public  Create(Voyage: Voyage): Promise<boolean>{
-
+    public Create(Voyage: Voyage): Promise<boolean>{
         let token = localStorage.getItem('token');
         let headers = new Headers({
             'Content-Type': 'application/json',
@@ -23,6 +31,5 @@ export class VoyageService{
          .then(response => {
             return true;
          });
-
     }
 }

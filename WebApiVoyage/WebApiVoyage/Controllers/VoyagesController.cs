@@ -25,6 +25,26 @@ namespace WebApiVoyage.Controllers
             
             return db.Voyages.Include(y=> y.Transport).Include(h=>h.Jours).Include(i=>i.ListeVoyageur);
         }
+        
+        [Authorize]
+        [Route("api/Voyages/MesVoyages")]
+        [HttpGet]
+        public List<VoyageDTO> GetMesVoyages()
+        {
+            if (!User.Identity.IsAuthenticated)
+                return new List<VoyageDTO>();
+
+            string userId = User.Identity.GetUserId();
+            List<Voyage> voyages = db.Voyages.ToList();
+
+            List<VoyageDTO> vDto = new List<VoyageDTO>();
+            foreach (Voyage v in voyages)
+            {
+                vDto.Add(v.toDTO());
+            }
+
+            return vDto;
+        }
 
         // GET: api/Voyages/5
         [ResponseType(typeof(Voyage))]
