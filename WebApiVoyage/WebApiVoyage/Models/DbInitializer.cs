@@ -64,7 +64,7 @@ namespace WebApiVoyage.Models
             voy1.Jours = new List<Jour> { };
 
             Voyage voy2 = new Voyage();
-            voy2.TitreVoyage = "Voyage des Pédestres";
+            voy2.TitreVoyage = "Épopée au Centre Bell";
             voy2.Budget = 4000.00;
             voy2.BudgetRestant = 1000.00;
 
@@ -78,7 +78,7 @@ namespace WebApiVoyage.Models
             voy2.Jours = new List<Jour> { };
 
             Voyage voy3 = new Voyage();
-            voy3.TitreVoyage = "Voyage des Pédestres";
+            voy3.TitreVoyage = "Tour de l'Égypte";
             voy3.Budget = 3500.00;
             voy3.BudgetRestant = 1500.00;
 
@@ -92,7 +92,7 @@ namespace WebApiVoyage.Models
             voy3.Jours = new List<Jour> { };
 
             Voyage voy4 = new Voyage();
-            voy4.TitreVoyage = "Voyage des Pédestres";
+            voy4.TitreVoyage = "Tour de l'Europe";
             voy4.Budget = 2000.00;
             voy4.BudgetRestant = 500.00;
 
